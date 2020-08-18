@@ -1,14 +1,19 @@
 import React, { useState } from "react";
-import { Pages } from "./components";
+import { PageList } from "./components";
 import { ThemeProvider } from "styled-components";
 import { DarkTheme, LightTheme, GlobalStyles } from "./theme";
 import styled from "styled-components";
+import { Router, Switch } from "react-router-dom";
+import { createBrowserHistory } from "history";
+
+const history = createBrowserHistory();
 
 const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.bg};
   color: ${({ theme }) => theme.colors.fontColors.medium};
   height: 100%;
   width: 100%;
+  overflow: auto;
 `;
 
 function App() {
@@ -24,7 +29,11 @@ function App() {
       <Wrapper>
         <button onClick={() => setLightMode(!lightMode)}>togggle theme</button>
         <GlobalStyles />
-        <Pages />
+        <Router history={history}>
+          <Switch>
+            <PageList />
+          </Switch>
+        </Router>
       </Wrapper>
     </ThemeProvider>
   );
