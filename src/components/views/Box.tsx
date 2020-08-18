@@ -8,7 +8,7 @@ export const Box = styled.div`
   padding: 2vw;
   height: 250px;
   width: 500px;
-  box-shadow: 0px 9px 17px -6px ${({ theme }) => theme.colors.shadow.color};
+  box-shadow:  ${({ theme }) => `${theme.colors.shadow.value}  ${theme.colors.shadow.color}`};
   transition: 0.2s linear;
   border-radius: 10px;
   cursor: pointer;

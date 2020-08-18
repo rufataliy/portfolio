@@ -13,10 +13,12 @@ const fontColorsLight = {
 
 const shadowDark = {
   color: "rgba(0, 0, 0, 0.7)",
+  value: "0px 9px 17px -6px",
   hover: "rgba(0, 0, 0, 0.9)",
 };
 const shadowLight = {
   color: "rgba(0, 0, 0, 0.7)",
+  value: "0px 9px 17px -6px",
   hover: "rgba(0, 0, 0, 0.9)",
 };
 
