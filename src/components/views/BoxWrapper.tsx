@@ -5,7 +5,7 @@ export const BoxWrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  padding: 20px 0;
   overflow: auto;
   box-sizing: border-box;
 `;
