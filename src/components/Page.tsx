@@ -1,13 +1,12 @@
-import React from "react";
-import { Box } from "./views";
-
-interface Page {
-  title: string;
-  path: string;
-  thumbnail: string;
-  content: string;
-}
+import React, { useState, useEffect } from "react";
+import { BoxOpen } from "./views";
 
 export const Page: React.FC = ({ children }) => {
-  return <Box>{children}</Box>;
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    document.addEventListener("animationend", () => {
+      setShow(true);
+    });
+  });
+  return <BoxOpen>{show && children}</BoxOpen>;
 };
