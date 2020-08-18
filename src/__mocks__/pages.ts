@@ -1,10 +1,25 @@
-import { Page } from "./models";
+import { Page } from "../models";
+import { contact, profile, project, blog } from "./img";
 
 export const pages: Page[] = [
   {
-    title: "Page",
-    content: "<p>lorem lorem30",
-    path: "link",
-    thumbnail: "linkimg",
+    title: "About",
+    path: "about",
+    thumbnail: profile,
+  },
+  {
+    title: "Portfolio",
+    path: "portfolios",
+    thumbnail: project,
+  },
+  {
+    title: "Blog",
+    path: "blog",
+    thumbnail: blog,
+  },
+  {
+    title: "Contact",
+    path: "contact",
+    thumbnail: contact,
   },
 ];
