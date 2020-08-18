@@ -1,2 +1,2 @@
-export { Page } from "./Page";
-export { Pages } from "./Pages";
+export { PageCard } from "./PageCard";
+export { PageList } from "./PageList";
