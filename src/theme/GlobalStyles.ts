@@ -6,4 +6,12 @@ export const GlobalStyles = createGlobalStyle`
     margin:0;
     padding:0;
 }
+#root{
+    height: 100vh;
+    width: 100vw;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
 `;
