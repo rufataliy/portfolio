@@ -1,16 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { useRouteMatch } from "react-router-dom";
+import { Content, Title } from "components/views";
+import { Portfolio as Model } from "models";
 
 export const Portfolio = () => {
-  const [content, setContent] = useState<{ body: string }>();
+  const [portfolio, setPortfolio] = useState<Model>();
   const { url } = useRouteMatch();
 
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setContent(data));
+      .then((data) => setPortfolio(data));
   }, [url]);
-  console.log(content);
+  console.log(portfolio);
 
-  return <p>{content?.body}</p>;
+  return (
+    <Content>
+      <Title>{portfolio?.title}</Title>
+      <img src={portfolio?.thumbnail} alt="" />
+      {portfolio?.content}
+    </Content>
+  );
 };
