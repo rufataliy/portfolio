@@ -2,7 +2,6 @@ import { rest } from "msw";
 import { pages } from "./pages";
 import { about } from "./about";
 import { portfolios } from "./portfolios";
-import { portfolioContents } from "./portfolioContents";
 
 export const handler = [
   rest.get("/pages", (req, res, ctx) => {
@@ -16,7 +15,7 @@ export const handler = [
   }),
   rest.get("/portfolios/:id", (req, res, ctx) => {
     const { id } = req.params;
-    const content = portfolioContents[id];
-    return res(ctx.status(200), ctx.json({ body: content }));
+    const portfolio = portfolios.find((portfolio) => portfolio.id === id);
+    return res(ctx.status(200), ctx.json({ ...portfolio }));
   }),
 ];
