@@ -14,7 +14,11 @@ export const PortfolioCard: React.FC<Props> = ({ portfolio }) => {
     <Link to={`${url}/${portfolio.id}`}>
       <Box>
         <Title>{portfolio.title}</Title>
-        <img src={portfolio.thumbnail} alt={portfolio.title} />
+        <img
+          className="portfolio-card-img"
+          src={portfolio.thumbnail}
+          alt={portfolio.title}
+        />
       </Box>
     </Link>
   );
