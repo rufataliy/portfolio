@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PageList } from "./components";
+import { PageList, ModeToggle } from "./components";
 import { ThemeProvider } from "styled-components";
 import { DarkTheme, LightTheme, GlobalStyles } from "./theme";
 import styled from "styled-components";
@@ -18,6 +18,7 @@ const Wrapper = styled.div`
 
 function App() {
   const [lightMode, setLightMode] = useState(true);
+
   const getTheme = (lightMode: boolean) => {
     if (lightMode) {
       return LightTheme;
@@ -27,7 +28,7 @@ function App() {
   return (
     <ThemeProvider theme={getTheme(lightMode)}>
       <Wrapper>
-        <button onClick={() => setLightMode(!lightMode)}>togggle theme</button>
+        <ModeToggle on={lightMode} onClick={() => setLightMode(!lightMode)} />
         <GlobalStyles />
         <Router history={history}>
           <Switch>
