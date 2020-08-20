@@ -11,7 +11,7 @@ export const PortfolioList: React.FC = () => {
   const { url, path } = useRouteMatch();
 
   useEffect(() => {
-    fetch(path)
+    fetch("http://localhost:1337" + path)
       .then((res) => res.json())
       .then((data) => setPortfolios(data));
   }, [path]);
@@ -20,11 +20,9 @@ export const PortfolioList: React.FC = () => {
     <BoxWrapper>
       {portfolios.map((portfolio) => {
         return (
-          <>
-            <Route exact path={url}>
-              <PortfolioCard key={portfolio.title} portfolio={portfolio} />
-            </Route>
-          </>
+          <Route exact path={url}>
+            <PortfolioCard key={portfolio.id} portfolio={portfolio} />
+          </Route>
         );
       })}
       <Route path={`${url}/:portfolioid`}>

@@ -11,7 +11,11 @@ export const portfolios: Portfolio[] = [
     Ut diam quam nulla porttitor massa. Fermentum dui faucibus in ornare. Purus gravida quis blandit turpis cursus in hac. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Et odio pellentesque diam volutpat commodo sed egestas. Sagittis aliquam malesuada bibendum arcu vitae elementum curabitur. Eu volutpat odio facilisis mauris. Viverra aliquet eget sit amet tellus cras adipiscing enim. Sagittis purus sit amet volutpat consequat mauris. Massa sapien faucibus et molestie ac. At erat pellentesque adipiscing commodo. Amet consectetur adipiscing elit ut aliquam. Elementum nisi quis eleifend quam. Tortor vitae purus faucibus ornare suspendisse sed. Neque viverra justo nec ultrices dui sapien. Odio tempor orci dapibus ultrices in iaculis. Ullamcorper malesuada proin libero nunc.
     `,
     path: "sanntek",
-    thumbnail: sanntek,
+    img: [
+      {
+        url: sanntek,
+      },
+    ],
   },
   {
     id: "2",
@@ -22,7 +26,7 @@ export const portfolios: Portfolio[] = [
 
     Ut diam quam nulla porttitor massa. Fermentum dui faucibus in ornare. Purus gravida quis blandit turpis cursus in hac. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Et odio pellentesque diam volutpat commodo sed egestas. Sagittis aliquam malesuada bibendum arcu vitae elementum curabitur. Eu volutpat odio facilisis mauris. Viverra aliquet eget sit amet tellus cras adipiscing enim. Sagittis purus sit amet volutpat consequat mauris. Massa sapien faucibus et molestie ac. At erat pellentesque adipiscing commodo. Amet consectetur adipiscing elit ut aliquam. Elementum nisi quis eleifend quam. Tortor vitae purus faucibus ornare suspendisse sed. Neque viverra justo nec ultrices dui sapien. Odio tempor orci dapibus ultrices in iaculis. Ullamcorper malesuada proin libero nunc.
     `,
-    thumbnail: prodigy,
+    img: [{ url: prodigy }],
   },
   {
     id: "3",
@@ -33,6 +37,6 @@ export const portfolios: Portfolio[] = [
 
     Ut diam quam nulla porttitor massa. Fermentum dui faucibus in ornare. Purus gravida quis blandit turpis cursus in hac. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Et odio pellentesque diam volutpat commodo sed egestas. Sagittis aliquam malesuada bibendum arcu vitae elementum curabitur. Eu volutpat odio facilisis mauris. Viverra aliquet eget sit amet tellus cras adipiscing enim. Sagittis purus sit amet volutpat consequat mauris. Massa sapien faucibus et molestie ac. At erat pellentesque adipiscing commodo. Amet consectetur adipiscing elit ut aliquam. Elementum nisi quis eleifend quam. Tortor vitae purus faucibus ornare suspendisse sed. Neque viverra justo nec ultrices dui sapien. Odio tempor orci dapibus ultrices in iaculis. Ullamcorper malesuada proin libero nunc.
     `,
-    thumbnail: zengarden,
+    img: [{ url: zengarden }],
   },
 ];

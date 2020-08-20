@@ -16,7 +16,7 @@ export const PortfolioCard: React.FC<Props> = ({ portfolio }) => {
         <Title>{portfolio.title}</Title>
         <img
           className="portfolio-card-img"
-          src={portfolio.thumbnail}
+          src={"http://localhost:1337" + portfolio.img[0].url}
           alt={portfolio.title}
         />
       </Box>

@@ -3,5 +3,9 @@ export interface Portfolio {
   title: string;
   content: string;
   path: string;
-  thumbnail: string;
+  img: [
+    {
+      url: string;
+    }
+  ];
 }
