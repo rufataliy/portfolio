@@ -17,18 +17,33 @@ const Wrapper = styled.div`
 `;
 
 function App() {
-  const [lightMode, setLightMode] = useState(true);
+  const [lightMode, setLightMode] = useState(
+    window.localStorage.getItem("mode")
+  );
 
-  const getTheme = (lightMode: boolean) => {
-    if (lightMode) {
+  const getTheme = (lightMode: string | null) => {
+    if (lightMode === "light") {
       return LightTheme;
     }
     return DarkTheme;
   };
+
+  const handeModeChange = () => {
+    setLightMode((mode) => (mode === "light" ? "dark" : "light"));
+    if (lightMode === "light") {
+      window.localStorage.setItem("mode", "dark");
+    } else {
+      window.localStorage.setItem("mode", "light");
+    }
+  };
+
   return (
     <ThemeProvider theme={getTheme(lightMode)}>
       <Wrapper>
-        <ModeToggle on={lightMode} onClick={() => setLightMode(!lightMode)} />
+        <ModeToggle
+          on={lightMode === "light"}
+          onClick={() => handeModeChange()}
+        />
         <GlobalStyles />
         <Router history={history}>
           <Switch>
