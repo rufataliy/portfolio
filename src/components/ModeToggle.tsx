@@ -12,8 +12,15 @@ const Icon = styled.img`
 
 const Wrapper = styled.div`
   position: fixed;
-  right: 10%;
-  top: 2%;
+  padding: 6px 10px;
+  background-color: ${(props) => props.theme.colors.bg};
+  box-shadow: 0px 3px 9px -3px rgba(0, 0, 0, 0.7);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  right: 2%;
+  top: 1%;
   z-index: 100;
 `;
 
