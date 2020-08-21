@@ -1,6 +1,5 @@
 import { Project } from "../models";
 import { sanntek, zengarden, prodigy } from "./img";
-import { content } from "./santek.js";
 
 export const projects: Project[] = [
   {
