@@ -3,8 +3,6 @@ import { Route, useRouteMatch } from "react-router-dom";
 import { Project as Model } from "../../models";
 import { ProjectCard } from "./ProjectCard";
 import { Project } from "./Project";
-import { BoxWrapper } from "../views";
-import { Page } from "../Page";
 
 export const ProjectList: React.FC = () => {
   const [project, setProject] = useState<Model[]>([]);
@@ -26,9 +24,7 @@ export const ProjectList: React.FC = () => {
         );
       })}
       <Route path={`${url}/:projectid`}>
-        <Page>
-          <Project />
-        </Page>
+        <Project />
       </Route>
     </>
   );

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { BoxWrapper } from "./views";
 import { PageCard } from "./PageCard";
-import { Page } from "./Page";
 import { Page as Model } from "../models";
 import { Route } from "react-router-dom";
 import { About, ProjectList } from "./pages";
@@ -34,9 +33,7 @@ export const PageList: React.FC = () => {
             <Route exact path={"/"}>
               <PageCard page={item} />
             </Route>
-            <Route path={"/" + item.path}>
-              <Page>{components[item.path]}</Page>
-            </Route>
+            <Route path={"/" + item.path}>{components[item.path]}</Route>
           </>
         );
       })}
