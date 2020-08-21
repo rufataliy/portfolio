@@ -28,8 +28,8 @@ export const pages: Page[] = [
   },
   {
     id: "1",
-    title: "Portfolio",
-    path: "portfolios",
+    title: "Projects",
+    path: "projects",
     img: [
       {
         url: project,

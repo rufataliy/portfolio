@@ -1,2 +1,2 @@
 export { About } from "./About";
-export { PortfolioList } from "./PortfolioList";
+export { ProjectList } from "./ProjectList";

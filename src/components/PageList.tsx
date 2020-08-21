@@ -4,7 +4,7 @@ import { PageCard } from "./PageCard";
 import { Page } from "./Page";
 import { Page as Model } from "../models";
 import { Route } from "react-router-dom";
-import { About, PortfolioList } from "./pages";
+import { About, ProjectList } from "./pages";
 
 interface Component {
   [key: string]: React.ReactNode;
@@ -12,7 +12,7 @@ interface Component {
 
 const components: Component = {
   about: <About />,
-  portfolios: <PortfolioList />,
+  projects: <ProjectList />,
   contact: <p>contact</p>,
   blog: <p>blog</p>,
 };

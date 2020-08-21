@@ -13,9 +13,6 @@ export const Box = styled.div`
   cursor: pointer;
   margin: 20px;
   order: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   box-shadow: 0px 2px 17px -6px ${({ theme }) => theme.colors.shadow.color};
   animation: shadowPop 0.5s 1 ease-out forwards;
   animation-delay: 0.1s;
@@ -26,7 +23,7 @@ export const Box = styled.div`
     bottom: -11%;
   }
 
-  .portfolio-card-img {
+  .project-card-img {
     width: 100%;
     border-radius: 5px;
   }

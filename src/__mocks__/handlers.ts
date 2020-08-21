@@ -1,7 +1,7 @@
 import { rest } from "msw";
 import { pages } from "./pages";
 import { about } from "./about";
-import { portfolios } from "./portfolios";
+import { projects } from "./projects";
 
 export const handler = [
   rest.get("/pages", (req, res, ctx) => {
@@ -10,12 +10,12 @@ export const handler = [
   rest.get("/about", (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(about));
   }),
-  rest.get("/portfolios", (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(portfolios));
+  rest.get("/projects", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(projects));
   }),
-  rest.get("/portfolios/:id", (req, res, ctx) => {
+  rest.get("/projects/:id", (req, res, ctx) => {
     const { id } = req.params;
-    const portfolio = portfolios.find((portfolio) => portfolio.id === id);
-    return res(ctx.status(200), ctx.json({ ...portfolio }));
+    const project = projects.find((project) => project.id === id);
+    return res(ctx.status(200), ctx.json({ ...project }));
   }),
 ];
