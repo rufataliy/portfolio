@@ -45,12 +45,12 @@ function App() {
   return (
     <Router history={history}>
       <ThemeProvider theme={getTheme(lightMode)}>
+        <GlobalStyles />
         <Wrapper>
           <Header
             on={lightMode === "light"}
             toggle={() => handleModeChange()}
           />
-          <GlobalStyles />
           <Switch>
             <PageList />
           </Switch>

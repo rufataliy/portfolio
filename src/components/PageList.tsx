@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BoxWrapper, Box, MockBox } from "./views";
+import { BoxWrapper, MockBox } from "./views";
 import { PageCard } from "./PageCard";
 import { Page as Model } from "../models";
 import { Route } from "react-router-dom";
@@ -33,7 +33,7 @@ export const PageList: React.FC = () => {
 
   return (
     <BoxWrapper>
-      {fetching && mockArr.map((item) => <MockBox />)}
+      {fetching || (pages.length < 1 && mockArr.map((item) => <MockBox />))}
       {!fetching &&
         pages.map((item) => {
           return (
@@ -47,11 +47,9 @@ export const PageList: React.FC = () => {
             </>
           );
         })}
-      {!fetching && (
-        <Route exact path={["/", "/contact"]}>
-          <Contact />
-        </Route>
-      )}
+      <Route exact path={["/", "/contact"]}>
+        {(!fetching || pages.length > 0) && <Contact />}
+      </Route>
     </BoxWrapper>
   );
 };
