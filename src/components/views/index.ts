@@ -10,3 +10,4 @@ export {
   ContactBoxCardBack,
   ContactBoxCardFront,
 } from "./Contact";
+export { MockBox } from "./MockBox";

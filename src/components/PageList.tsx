@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BoxWrapper } from "./views";
+import { BoxWrapper, Box, MockBox } from "./views";
 import { PageCard } from "./PageCard";
 import { Page as Model } from "../models";
 import { Route } from "react-router-dom";
@@ -12,35 +12,46 @@ interface Component {
 const components: Component = {
   about: <About />,
   projects: <ProjectList />,
-  blog: <p>blog</p>,
 };
+
+const mockArr = new Array(4).fill(undefined);
 
 export const PageList: React.FC = () => {
   const [pages, setPages] = useState<Model[]>([]);
+  const [fetching, setFetching] = useState<boolean>(false);
 
   useState(() => {
+    setFetching(true);
     fetch("/pages")
       .then((res) => res.json())
-      .then((data) => setPages(data));
+      .then((data) => {
+        setPages(data);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => setFetching(false));
   });
 
   return (
     <BoxWrapper>
-      {pages.map((item) => {
-        return (
-          <>
-            <Route exact path={["/", "/contact"]}>
-              <PageCard page={item} />
-            </Route>
-            {components[item.path] && (
-              <Route path={"/" + item.path}>{components[item.path]}</Route>
-            )}
-          </>
-        );
-      })}
-      <Route exact path={["/", "/contact"]}>
-        <Contact />
-      </Route>
+      {fetching && mockArr.map((item) => <MockBox />)}
+      {!fetching &&
+        pages.map((item) => {
+          return (
+            <>
+              <Route exact path={["/", "/contact"]}>
+                <PageCard page={item} />
+              </Route>
+              {components[item.path] && (
+                <Route path={"/" + item.path}>{components[item.path]}</Route>
+              )}
+            </>
+          );
+        })}
+      {!fetching && (
+        <Route exact path={["/", "/contact"]}>
+          <Contact />
+        </Route>
+      )}
     </BoxWrapper>
   );
 };
