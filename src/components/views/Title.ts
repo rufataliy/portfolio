@@ -7,6 +7,7 @@ export const Title = styled.div`
   left: 5%;
   padding: 0.5rem 1.4rem;
   background: white;
+  transition: 0.2s linear;
   box-shadow: 0px 3px 9px -3px rgba(0, 0, 0, 0.7);
   background-color: ${({ theme }) => theme.colors.bg};
   color: ${({ theme }) => theme.colors.fontColors.medium};
