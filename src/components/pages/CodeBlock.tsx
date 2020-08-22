@@ -8,8 +8,6 @@ interface Props {
 }
 
 export const CodeBlock: React.FC<Props> = ({ language, value }) => {
-  console.log(language);
-
   return (
     <Highlighter style={atomOneDark} language={language}>
       {value}
