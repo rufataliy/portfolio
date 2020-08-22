@@ -14,6 +14,11 @@ const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  & > div:nth-child(2) {
+    flex-grow: 1;
+  }
 `;
 
 function App() {
