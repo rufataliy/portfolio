@@ -16,7 +16,7 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
         <Title>{project.title}</Title>
         <img
           className="project-card-img"
-          src={"http://localhost:1337" + project.img[0].url}
+          src={project.img[0].url}
           alt={project.title}
         />
       </Box>

@@ -9,7 +9,7 @@ export const ProjectList: React.FC = () => {
   const { url, path } = useRouteMatch();
 
   useEffect(() => {
-    fetch("http://localhost:1337" + path)
+    fetch(path)
       .then((res) => res.json())
       .then((data) => setProject(data));
   }, [path]);
