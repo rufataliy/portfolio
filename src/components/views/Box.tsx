@@ -12,7 +12,6 @@ export const boxCommon = styled.div`
   border-radius: 10px;
   cursor: pointer;
   margin: 20px;
-  order: 2;
 
   .page-card-img {
     height: 100%;
