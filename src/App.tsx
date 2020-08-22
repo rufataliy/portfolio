@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PageList, ModeToggle } from "./components";
+import { PageList, Header } from "./components";
 import { ThemeProvider } from "styled-components";
 import { DarkTheme, LightTheme, GlobalStyles } from "./theme";
 import styled from "styled-components";
@@ -28,7 +28,7 @@ function App() {
     return DarkTheme;
   };
 
-  const handeModeChange = () => {
+  const handleModeChange = () => {
     setLightMode((mode) => (mode === "light" ? "dark" : "light"));
     if (lightMode === "light") {
       window.localStorage.setItem("mode", "dark");
@@ -38,20 +38,20 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={getTheme(lightMode)}>
-      <Wrapper>
-        <ModeToggle
-          on={lightMode === "light"}
-          onClick={() => handeModeChange()}
-        />
-        <GlobalStyles />
-        <Router history={history}>
+    <Router history={history}>
+      <ThemeProvider theme={getTheme(lightMode)}>
+        <Wrapper>
+          <Header
+            on={lightMode === "light"}
+            toggle={() => handleModeChange()}
+          />
+          <GlobalStyles />
           <Switch>
             <PageList />
           </Switch>
-        </Router>
-      </Wrapper>
-    </ThemeProvider>
+        </Wrapper>
+      </ThemeProvider>
+    </Router>
   );
 }
 
