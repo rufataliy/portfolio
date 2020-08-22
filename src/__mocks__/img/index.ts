@@ -7,3 +7,4 @@ export { default as sanntek } from "./sanntek.png";
 export { default as prodigy } from "./prodigy.png";
 export { default as sun } from "./sun.svg";
 export { default as moon } from "./full_moon.svg";
+export { default as home } from "./home.svg";
