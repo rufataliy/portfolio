@@ -2,6 +2,7 @@ import { rest } from "msw";
 import { pages } from "./pages";
 import { about } from "./about";
 import { projects } from "./projects";
+import { contact } from "./contact";
 
 export const handler = [
   rest.get("/pages", (req, res, ctx) => {
@@ -17,5 +18,8 @@ export const handler = [
     const { id } = req.params;
     const project = projects.find((project) => project.id === id);
     return res(ctx.status(200), ctx.json({ ...project }));
+  }),
+  rest.get("/contact", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(contact));
   }),
 ];
