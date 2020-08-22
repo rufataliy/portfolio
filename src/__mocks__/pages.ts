@@ -50,28 +50,4 @@ export const pages: Page[] = [
       },
     ],
   },
-  {
-    title: "Blog",
-    path: "blog",
-    id: "1",
-    img: [
-      {
-        url: blog,
-        formats: {
-          thumbnail: {
-            url: blog,
-          },
-          large: {
-            url: blog,
-          },
-          medium: {
-            url: blog,
-          },
-          small: {
-            url: blog,
-          },
-        },
-      },
-    ],
-  },
 ];
