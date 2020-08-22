@@ -4,3 +4,9 @@ export { Title } from "./Title";
 export { Content } from "./Content";
 export { Toggle } from "./Toggle";
 export { Icon } from "./Icon";
+export {
+  Contact,
+  ContactBox,
+  ContactBoxCardBack,
+  ContactBoxCardFront,
+} from "./Contact";
