@@ -11,7 +11,8 @@ export const ProjectList: React.FC = () => {
   useEffect(() => {
     fetch(path)
       .then((res) => res.json())
-      .then((data) => setProject(data));
+      .then((data) => setProject(data))
+      .catch((err) => console.log(err));
   }, [path]);
 
   return (

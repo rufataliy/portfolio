@@ -12,7 +12,8 @@ export const Project = () => {
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setProject(data));
+      .then((data) => setProject(data))
+      .catch((err) => console.log(err));
   }, [url]);
 
   return (
