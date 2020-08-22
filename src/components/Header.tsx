@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 const Bar = styled.div`
   display: flex;
   justify-content: center;
+  padding: 5px;
   img::selection {
     background: transparent;
   }
