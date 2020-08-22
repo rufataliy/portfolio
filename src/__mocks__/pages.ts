@@ -1,5 +1,5 @@
 import { Page } from "../models";
-import { contact, profile, project, blog } from "./img";
+import { profile, project, blog } from "./img";
 
 export const pages: Page[] = [
   {
@@ -69,30 +69,6 @@ export const pages: Page[] = [
           },
           small: {
             url: blog,
-          },
-        },
-      },
-    ],
-  },
-  {
-    title: "Contact",
-    path: "contact",
-    id: "1",
-    img: [
-      {
-        url: contact,
-        formats: {
-          thumbnail: {
-            url: contact,
-          },
-          large: {
-            url: contact,
-          },
-          medium: {
-            url: contact,
-          },
-          small: {
-            url: contact,
           },
         },
       },
