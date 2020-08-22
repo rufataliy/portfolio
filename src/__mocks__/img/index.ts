@@ -1,9 +1,9 @@
-export { default as profile } from "./profile.png";
+export { default as profile } from "./profile.webp";
 export { default as project } from "./project.svg";
 export { default as contact } from "./contact.svg";
 export { default as blog } from "./blog.svg";
-export { default as zengarden } from "./zengarden.png";
-export { default as sanntek } from "./sanntek.png";
+export { default as zengarden } from "./zengarden.webp";
+export { default as sanntek } from "./sanntek.webp";
 export { default as prodigy } from "./prodigy.png";
 export { default as sun } from "./sun.svg";
 export { default as moon } from "./full_moon.svg";
