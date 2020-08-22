@@ -3,7 +3,7 @@ import { BoxWrapper } from "./views";
 import { PageCard } from "./PageCard";
 import { Page as Model } from "../models";
 import { Route } from "react-router-dom";
-import { About, ProjectList } from "./pages";
+import { About, ProjectList, Contact } from "./pages";
 
 interface Component {
   [key: string]: React.ReactNode;
@@ -12,7 +12,6 @@ interface Component {
 const components: Component = {
   about: <About />,
   projects: <ProjectList />,
-  contact: <p>contact</p>,
   blog: <p>blog</p>,
 };
 
@@ -30,13 +29,18 @@ export const PageList: React.FC = () => {
       {pages.map((item) => {
         return (
           <>
-            <Route exact path={"/"}>
+            <Route exact path={["/", "/contact"]}>
               <PageCard page={item} />
             </Route>
-            <Route path={"/" + item.path}>{components[item.path]}</Route>
+            {components[item.path] && (
+              <Route path={"/" + item.path}>{components[item.path]}</Route>
+            )}
           </>
         );
       })}
+      <Route exact path={["/", "/contact"]}>
+        <Contact />
+      </Route>
     </BoxWrapper>
   );
 };

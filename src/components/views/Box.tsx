@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Box = styled.div`
+export const boxCommon = styled.div`
   position: relative;
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.bg};
@@ -13,15 +13,24 @@ export const Box = styled.div`
   cursor: pointer;
   margin: 20px;
   order: 2;
-  box-shadow: 0px 2px 17px -6px ${({ theme }) => theme.colors.shadow.color};
-  animation: shadowPop 0.5s 1 ease-out forwards;
-  animation-delay: 0.1s;
+
   .page-card-img {
     height: 100%;
     position: absolute;
     right: 0;
     bottom: -11%;
   }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px -9px 25px -15px ${({ theme }) => theme.colors.shadow.hover};
+  }
+`;
+
+export const Box = styled(boxCommon)`
+  box-shadow: 0px 2px 17px -6px ${({ theme }) => theme.colors.shadow.color};
+  animation: shadowPop 0.5s 1 ease-out forwards;
+  animation-delay: 0.1s;
 
   .project-card-img {
     width: 100%;
@@ -36,10 +45,5 @@ export const Box = styled.div`
       box-shadow: ${({ theme }) =>
         `${theme.colors.shadow.value} ${theme.colors.shadow.color}`};
     }
-  }
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0px -9px 25px -15px ${({ theme }) => theme.colors.shadow.hover};
   }
 `;
