@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Icon } from "./views";
 import { ModeToggle } from "./ModeToggle";
 import { home } from "../__mocks__/img";
-import { Link } from "react-router-dom";
+import { Link as ReactLink } from "react-router-dom";
 
 const Bar = styled.div`
   display: flex;
@@ -14,12 +14,17 @@ const Bar = styled.div`
   }
 `;
 
-const ToggleWrapper = styled.div`
+const Link = styled(ReactLink)`
+  height: 22px;
+`;
+
+const Wrapper = styled.div`
   padding: 6px 10px;
   background-color: ${(props) => props.theme.colors.bg};
   box-shadow: 0px 3px 9px -3px rgba(0, 0, 0, 0.7);
   border-radius: 50px;
-  display: inline-block;
+  display: flex;
+  align-items: center;
 `;
 
 interface Props {
@@ -30,12 +35,12 @@ interface Props {
 export const Header: React.FC<Props> = ({ on, toggle }) => {
   return (
     <Bar>
-      <ToggleWrapper>
+      <Wrapper>
         <Link to={"/"}>
           <Icon src={home} />
         </Link>
         <ModeToggle on={on} onClick={toggle} />
-      </ToggleWrapper>
+      </Wrapper>
     </Bar>
   );
 };
