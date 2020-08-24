@@ -7,13 +7,11 @@ import { CodeBlock } from "./CodeBlock";
 
 export const Project = () => {
   const [project, setProject] = useState<Model>();
+  const [fetching, setFetching] = useState<boolean>(false);
   const { url } = useRouteMatch();
 
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setProject(data))
-      .catch((err) => console.log(err));
+    api(`${process.env.REACT_APP_API_URL}${url}`, setProject, setFetching);
   }, [url]);
 
   return (
