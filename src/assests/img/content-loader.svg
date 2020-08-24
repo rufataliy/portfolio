@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="6.233 11.415 485.854 700.204" xmlns="http://www.w3.org/2000/svg">
+  <rect x="6.233" y="11.415" width="485.854" height="208.317" style="fill: rgb(216, 216, 216);">
+       <animate attributeName="fill" values="#777777;#a8a8a8;#777777" dur="2s" repeatCount="indefinite" />
+  </rect>
+  <g transform="matrix(1.135516, 0, 0, 1.625559, 5.647713, -68.2705)" style="">
+    <g>
+    <animate  attributeName="stroke" values="#a8a8a8;#777777;#a8a8a8" dur="2s" repeatCount="indefinite" />
+      <line style="fill: rgb(216, 216, 216);  stroke-width: 4px; stroke-linecap: round; stroke-linejoin: bevel;" x1="3.151" y1="199.93" x2="204.832" y2="199.93"/>
+      <line style="fill: rgb(216, 216, 216);  stroke-width: 4px; stroke-linecap: round; stroke-linejoin: bevel;" x1="3.201" y1="230.042" x2="428.271" y2="230.042"/>
+      <line style="fill: rgb(216, 216, 216);  stroke-width: 4px; stroke-linecap: round; stroke-linejoin: bevel;" x1="3.151" y1="246.849" x2="428.221" y2="246.849"/>
+      <line style="fill: rgb(216, 216, 216);  stroke-width: 4px; stroke-linecap: round; stroke-linejoin: bevel;" x1="3.151" y1="262.955" x2="428.221" y2="262.955"/>
+      <line style="fill: rgb(216, 216, 216);  stroke-width: 4px; stroke-linecap: round; stroke-linejoin: bevel;" x1="2.952" y1="281.163" x2="428.022" y2="281.163"/>
+      <line style="fill: rgb(216, 216, 216);  stroke-width: 4px; stroke-linecap: round; stroke-linejoin: bevel;" x1="0.7" y1="300.07" x2="425.77" y2="300.07" transform="matrix(0.47135934233665466, 0, 0, 0, 3.1510000228881836, 199.92999267578125)"/>
+    </g>
+  </g>
+  <g transform="matrix(1.135516, 0, 0, 1.625559, 5.647713, 115.572014)" style="">
+    <g>
+      <animate attributeName="stroke" values="#777777;#a8a8a8;#777777" dur="2s" repeatCount="indefinite" />
+      <line style="fill: rgb(216, 216, 216);  stroke-width: 4px; stroke-linecap: round; stroke-linejoin: bevel;" x1="3.151" y1="199.93" x2="204.832" y2="199.93"/>
+      <line style="fill: rgb(216, 216, 216);  stroke-width: 4px; stroke-linecap: round; stroke-linejoin: bevel;" x1="3.201" y1="230.042" x2="428.271" y2="230.042"/>
+      <line style="fill: rgb(216, 216, 216);  stroke-width: 4px; stroke-linecap: round; stroke-linejoin: bevel;" x1="3.151" y1="246.849" x2="428.221" y2="246.849"/>
+      <line style="fill: rgb(216, 216, 216);  stroke-width: 4px; stroke-linecap: round; stroke-linejoin: bevel;" x1="3.151" y1="262.955" x2="428.221" y2="262.955"/>
+      <line style="fill: rgb(216, 216, 216);  stroke-width: 4px; stroke-linecap: round; stroke-linejoin: bevel;" x1="2.952" y1="281.163" x2="428.022" y2="281.163"/>
+      <line style="fill: rgb(216, 216, 216);  stroke-width: 4px; stroke-linecap: round; stroke-linejoin: bevel;" x1="0.7" y1="300.07" x2="425.77" y2="300.07" transform="matrix(0.47135934233665466, 0, 0, 0, 3.1510000228881836, 199.92999267578125)"/>
+    </g>
+  </g>
+  <rect x="6.233" y="600.415" width="485.854" height="208.317" style="fill: rgb(216, 216, 216);">
+       <animate attributeName="fill" values="#777777;#a8a8a8;#777777" dur="2s" repeatCount="indefinite" />
+  </rect>
+</svg>
