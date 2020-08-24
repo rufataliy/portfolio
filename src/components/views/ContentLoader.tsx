@@ -1,5 +1,5 @@
 import React from "react";
-import { contentLoader } from "../../__mocks__/img";
+import { contentLoader } from "../../assests/img";
 import styled from "styled-components";
 
 interface Props {

@@ -5,4 +5,3 @@ export { default as blog } from "./blog.svg";
 export { default as zengarden } from "./zengarden.webp";
 export { default as sanntek } from "./sanntek.webp";
 export { default as prodigy } from "./prodigy.png";
-export { default as contentLoader } from "./content-loader.svg";
