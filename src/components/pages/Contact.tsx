@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Contact as ContactWrapper,
   ContactBox,
@@ -10,6 +10,7 @@ import { Contact as Model } from "models";
 import Markdown from "react-markdown";
 import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
+import { api } from "../../util";
 
 const ClickArea = styled.div`
   position: absolute;
@@ -23,20 +24,25 @@ const Wrapper = styled.div`
   overflow: hidden;
 `;
 
-export const Contact: React.FC = (props) => {
+export const Contact: React.FC = React.memo(() => {
   const [contact, setContact] = useState<Model>();
+  const [fetching, setFetching] = useState(false);
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    fetch("/contact")
-      .then((res) => res.json())
-      .then((data) => setContact(data));
-  }, []);
+  const ref = useRef<HTMLDivElement>(null);
 
   const isContactPage = pathname === "/" + contact?.path;
 
+  useEffect(() => {
+    api(`${process.env.REACT_APP_API_URL}/contact`, setContact, setFetching);
+  }, []);
+
+  useEffect(() => {
+    if (isContactPage) ref?.current?.scrollIntoView();
+  }, [isContactPage]);
+
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
       <ContactWrapper flip={isContactPage || false}>
         <ContactBox>
           <ContactBoxCardFront>
@@ -49,7 +55,7 @@ export const Contact: React.FC = (props) => {
                 <Title>{contact?.title}</Title>
                 <img
                   className="page-card-img"
-                  src={contact?.img[0].url}
+                  src={`${process.env.REACT_APP_API_URL}${contact?.img[0].url}`}
                   alt={contact?.title}
                 />
               </ClickArea>
@@ -62,4 +68,4 @@ export const Contact: React.FC = (props) => {
       </ContactWrapper>
     </Wrapper>
   );
-};
+});
