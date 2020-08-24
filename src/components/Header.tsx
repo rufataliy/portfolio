@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Icon } from "./views";
 import { ModeToggle } from "./ModeToggle";
 import { Link as ReactLink } from "react-router-dom";
+import { Resume } from "models";
+import { api } from "../util";
 
 const Bar = styled.div`
   display: flex;
@@ -37,6 +39,13 @@ interface Props {
 }
 
 export const Header: React.FC<Props> = ({ on, toggle }) => {
+  const [resume, setResume] = useState<Resume>();
+  const [fetching, setFetching] = useState(false);
+
+  useEffect(() => {
+    api(`${process.env.REACT_APP_API_URL}/resume`, setResume, setFetching);
+  }, []);
+
   return (
     <Bar>
       <Wrapper>
@@ -44,6 +53,15 @@ export const Header: React.FC<Props> = ({ on, toggle }) => {
           <Icon name={"ui-home"} />
         </NavLink>
         <ModeToggle on={on} onClick={toggle} />
+        <NavLink
+          target={"_blank"}
+          to={(location) => ({
+            ...location,
+            pathname: `${process.env.REACT_APP_API_URL}${resume?.file[0].url}`,
+          })}
+        >
+          Resume
+        </NavLink>
       </Wrapper>
     </Bar>
   );
