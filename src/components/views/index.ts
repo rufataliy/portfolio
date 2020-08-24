@@ -11,3 +11,4 @@ export {
   ContactBoxCardFront,
 } from "./Contact";
 export { BoxLoader } from "./BoxLoader";
+export { ContentLoader } from "./ContentLoader";
