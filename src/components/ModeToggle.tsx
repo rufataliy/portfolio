@@ -1,18 +1,35 @@
 import React from "react";
 import { Toggle, Icon } from "./views";
-import { sun, moon } from "../__mocks__/img";
+import styled from "styled-components";
 
 interface Props {
   onClick: () => void;
   on: boolean;
 }
 
+interface WrapperProps {
+  on: boolean;
+}
+
+const Wrapper = styled.div<WrapperProps>`
+  display: flex;
+  align-items: center;
+  & i {
+    &[class$="sun-alt"] {
+      ${(props) => props.on && `color: ${props.theme.colors.accents.primary}`};
+    }
+    &[class$="moon"] {
+      ${(props) => !props.on && `color: ${props.theme.colors.accents.primary}`};
+    }
+  }
+`;
+
 export const ModeToggle: React.FC<Props> = ({ onClick, on }) => {
   return (
-    <>
-      <Icon src={sun} />
+    <Wrapper on={on}>
+      <Icon name={"sun-alt"} />
       <Toggle on={on} onClick={onClick} />
-      <Icon src={moon} />
-    </>
+      <Icon name={"moon"} />
+    </Wrapper>
   );
 };
