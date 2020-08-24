@@ -5,6 +5,9 @@ export const BoxWrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  overflow: auto;
   box-sizing: border-box;
+  padding-bottom: 30px;
+  & > * {
+    max-width: 100%;
+  }
 `;

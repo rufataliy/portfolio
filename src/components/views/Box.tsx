@@ -5,14 +5,19 @@ export const boxCommon = styled.div`
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.bg};
   box-sizing: border-box;
-  padding: 2vw;
+  padding: 1vw;
   height: 250px;
   width: 500px;
   transition: 0.2s linear;
   border-radius: 10px;
   cursor: pointer;
   margin: 20px;
-
+  max-width: 100%;
+  & > a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
   .page-card-img {
     height: 100%;
     position: absolute;

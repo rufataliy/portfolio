@@ -20,10 +20,6 @@ const ClickArea = styled.div`
   right: 0;
 `;
 
-const Wrapper = styled.div`
-  overflow: hidden;
-`;
-
 export const Contact: React.FC = React.memo(() => {
   const [contact, setContact] = useState<Model>();
   const [fetching, setFetching] = useState(false);
@@ -42,30 +38,28 @@ export const Contact: React.FC = React.memo(() => {
   }, [isContactPage]);
 
   return (
-    <Wrapper ref={ref}>
-      <ContactWrapper flip={isContactPage || false}>
-        <ContactBox>
-          <ContactBoxCardFront>
-            <Link
-              className={"page-link"}
-              onClick={(e) => e.stopPropagation()}
-              to={contact?.path || ""}
-            >
-              <ClickArea>
-                <Title>{contact?.title}</Title>
-                <img
-                  className="page-card-img"
-                  src={`${process.env.REACT_APP_API_URL}${contact?.img[0].url}`}
-                  alt={contact?.title}
-                />
-              </ClickArea>
-            </Link>
-          </ContactBoxCardFront>
-          <ContactBoxCardBack>
-            <Markdown source={contact?.content} />
-          </ContactBoxCardBack>
-        </ContactBox>
-      </ContactWrapper>
-    </Wrapper>
+    <ContactWrapper ref={ref} flip={isContactPage || false}>
+      <ContactBox>
+        <ContactBoxCardFront>
+          <Link
+            className={"page-link"}
+            onClick={(e) => e.stopPropagation()}
+            to={contact?.path || ""}
+          >
+            <ClickArea>
+              <Title>{contact?.title}</Title>
+              <img
+                className="page-card-img"
+                src={`${process.env.REACT_APP_API_URL}${contact?.img[0].url}`}
+                alt={contact?.title}
+              />
+            </ClickArea>
+          </Link>
+        </ContactBoxCardFront>
+        <ContactBoxCardBack>
+          <Markdown source={contact?.content} />
+        </ContactBoxCardBack>
+      </ContactBox>
+    </ContactWrapper>
   );
 });
