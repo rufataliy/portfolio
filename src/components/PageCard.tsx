@@ -12,7 +12,11 @@ export const PageCard: React.FC<Props> = ({ page }) => {
     <Link to={page.path}>
       <Box>
         <Title>{page.title}</Title>
-        <img className="page-card-img" src={page.img[0].url} alt={page.title} />
+        <img
+          className="page-card-img"
+          src={`${process.env.REACT_APP_API_URL}${page.img[0].url}`}
+          alt={page.title}
+        />
       </Box>
     </Link>
   );

@@ -6,7 +6,7 @@ export const About = () => {
   const [content, setContent] = useState<any>();
 
   useEffect(() => {
-    fetch(pathname)
+    fetch(`${process.env.REACT_APP_API_URL}${pathname}`)
       .then((res) => res.json())
       .then((data) => setContent(data));
   }, [pathname]);

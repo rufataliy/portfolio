@@ -7,7 +7,7 @@ interface Props {
   project: Model;
 }
 
-export const ProjectCard: React.FC<Props> = ({ project }) => {
+export const ProjectCard: React.FC<Props> = React.memo(({ project }) => {
   const { url } = useRouteMatch();
 
   return (
@@ -16,10 +16,10 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
         <Title>{project.title}</Title>
         <img
           className="project-card-img"
-          src={project.img[0].url}
+          src={process.env.REACT_APP_API_URL + project.img[0].url}
           alt={project.title}
         />
       </Box>
     </Link>
   );
-};
+});
