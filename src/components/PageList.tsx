@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { BoxWrapper, MockBox } from "./views";
+import React, { useState, useEffect } from "react";
+import { BoxWrapper, BoxLoader } from "./views";
 import { PageCard } from "./PageCard";
 import { Page as Model } from "../models";
 import { Route } from "react-router-dom";
@@ -20,7 +20,7 @@ export const PageList: React.FC = () => {
   const [pages, setPages] = useState<Model[]>([]);
   const [fetching, setFetching] = useState<boolean>(false);
 
-  useState(() => {
+  useEffect(() => {
     setFetching(true);
     fetch("/pages")
       .then((res) => res.json())
@@ -31,24 +31,29 @@ export const PageList: React.FC = () => {
       .finally(() => setFetching(false));
   });
 
+  const loading = false
+
   return (
     <BoxWrapper>
-      {fetching || (pages.length < 1 && mockArr.map((item) => <MockBox />))}
-      {!fetching &&
-        pages.map((item) => {
-          return (
-            <>
-              <Route exact path={["/", "/contact"]}>
-                <PageCard page={item} />
-              </Route>
-              {components[item.path] && (
-                <Route path={"/" + item.path}>{components[item.path]}</Route>
-              )}
-            </>
-          );
-        })}
+      {pages.map((item) => {
+        return (
+          components[item.path] && (
+            <Route
+              path={"/" + item.path}
+              render={() => components[item.path]}
+            />
+          )
+        );
+      })}
       <Route exact path={["/", "/contact"]}>
-        {(!fetching || pages.length > 0) && <Contact />}
+        <BoxLoader loading={loading}>
+          {pages.map((item) => {
+            return <PageCard key={item.id} page={item} />;
+          })}
+          <Route exact path={["/", "/contact"]}>
+            <Contact />
+          </Route>
+        </BoxLoader>
       </Route>
     </BoxWrapper>
   );

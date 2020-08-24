@@ -3,6 +3,7 @@ import { Route, useRouteMatch } from "react-router-dom";
 import { Project as Model } from "../../models";
 import { ProjectCard } from "./ProjectCard";
 import { Project } from "./Project";
+import { BoxLoader } from "components/views";
 
 export const ProjectList: React.FC = () => {
   const [project, setProject] = useState<Model[]>([]);
@@ -15,18 +16,20 @@ export const ProjectList: React.FC = () => {
       .catch((err) => console.log(err));
   }, [path]);
 
+  const loading = false
+
   return (
     <>
-      {project.map((project) => {
-        return (
-          <Route exact path={url}>
-            <ProjectCard key={project.id} project={project} />
-          </Route>
-        );
-      })}
-      <Route path={`${url}/:projectid`}>
+      <Route exact path={`${url}/:projectid`}>
         <Project />
+      </Route>
+      <Route exact path={url}>
+        <BoxLoader loading={loading}>
+          {projects.map((project) => {
+            return <ProjectCard key={project.id} project={project} />;
+          })}
+        </BoxLoader>
       </Route>
     </>
   );
-};
+});
