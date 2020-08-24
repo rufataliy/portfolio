@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Icon } from "./views";
 import { ModeToggle } from "./ModeToggle";
-import { home } from "../__mocks__/img";
 import { Link as ReactLink } from "react-router-dom";
 
 const Bar = styled.div`
@@ -14,8 +13,13 @@ const Bar = styled.div`
   }
 `;
 
-const Link = styled(ReactLink)`
+const NavLink = styled(ReactLink)`
   height: 22px;
+  color: ${(props) => props.theme.colors.fontColors.medium};
+  transition: 0.3s;
+  &:hover {
+    color: ${(props) => props.theme.colors.accents.primary};
+  }
 `;
 
 const Wrapper = styled.div`
@@ -36,9 +40,9 @@ export const Header: React.FC<Props> = ({ on, toggle }) => {
   return (
     <Bar>
       <Wrapper>
-        <Link to={"/"}>
-          <Icon src={home} />
-        </Link>
+        <NavLink to={"/"}>
+          <Icon name={"ui-home"} />
+        </NavLink>
         <ModeToggle on={on} onClick={toggle} />
       </Wrapper>
     </Bar>
