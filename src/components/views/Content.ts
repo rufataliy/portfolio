@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const Content = styled.div`
-  width: 60%;
+  width: 95%;
+  max-width: 900px;
   margin: 0 auto;
-  margin-top: 40px;
   position: relative;
+  height: 100%;
   img {
     width: 100%;
     border-radius: 5px;
