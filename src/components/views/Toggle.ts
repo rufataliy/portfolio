@@ -7,7 +7,7 @@ interface Props {
 export const Toggle = styled.div<Props>`
   width: 60px;
   height: 20px;
-  border: 1px solid grey;
+  border: 1px solid ${(props) => props.theme.colors.fontColors.medium};
   border-radius: 50px;
   position: relative;
   display: inline-block;
@@ -22,7 +22,7 @@ export const Toggle = styled.div<Props>`
     height: 16px;
     width: 16px;
     border-radius: 100%;
-    background: grey;
+    background: ${(props) => props.theme.colors.fontColors.medium};
     top: 50%;
     transform: translateY(-50%);
   }
