@@ -3,11 +3,11 @@ import { Dispatch } from "react";
 type UseApi = (
   url: string,
   callback: React.SetStateAction<any>,
-  setFetchingStatus: Dispatch<React.SetStateAction<boolean>>
+  setStatus?: Dispatch<React.SetStateAction<boolean>>
 ) => Promise<any>;
 
-export const api: UseApi = (url, callback, setFetchingStatus) => {
-  setFetchingStatus(true);
+export const api: UseApi = (url, callback, setStatus) => {
+  setStatus && setStatus(true);
   return new Promise((resolve, reject) => {
     fetch(url)
       .then((res) => {
@@ -25,6 +25,6 @@ export const api: UseApi = (url, callback, setFetchingStatus) => {
         }
       })
       .catch((err) => console.log(err))
-      .finally(() => setFetchingStatus(false));
+      .finally(() => setStatus && setStatus(false));
   });
 };
