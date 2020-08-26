@@ -13,6 +13,7 @@ export const boxCommon = styled.div`
   cursor: pointer;
   margin: 20px;
   max-width: 100%;
+
   & > a {
     display: inline-block;
     height: 100%;
@@ -28,6 +29,10 @@ export const boxCommon = styled.div`
   &:hover {
     transform: scale(1.05);
     box-shadow: 0px -9px 25px -15px ${({ theme }) => theme.colors.shadow.hover};
+  }
+  @media screen and (min-width: 1440px) {
+    height: 30vh;
+    width: 30vw;
   }
 `;
 
