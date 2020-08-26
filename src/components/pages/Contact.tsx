@@ -6,7 +6,7 @@ import {
   ContactBoxCardFront,
   Title,
 } from "../views";
-import { Contact as Model } from "models";
+import { Page as Model } from "models";
 import Markdown from "react-markdown";
 import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
@@ -20,18 +20,16 @@ const ClickArea = styled.div`
   right: 0;
 `;
 
-export const Contact: React.FC = React.memo(() => {
-  const [contact, setContact] = useState<Model>();
-  const [fetching, setFetching] = useState(false);
+interface Props {
+  page: Model;
+}
+
+export const Contact: React.FC<Props> = React.memo(({ page }) => {
   const { pathname } = useLocation();
 
   const ref = useRef<HTMLDivElement>(null);
 
-  const isContactPage = pathname === "/" + contact?.path;
-
-  useEffect(() => {
-    api(`${process.env.REACT_APP_API_URL}/contact`, setContact, setFetching);
-  }, []);
+  const isContactPage = pathname === "/" + page?.path;
 
   useEffect(() => {
     if (isContactPage) ref?.current?.scrollIntoView();
@@ -44,20 +42,20 @@ export const Contact: React.FC = React.memo(() => {
           <Link
             className={"page-link"}
             onClick={(e) => e.stopPropagation()}
-            to={contact?.path || ""}
+            to={page?.path || ""}
           >
             <ClickArea>
-              <Title>{contact?.title}</Title>
+              <Title>{page?.title}</Title>
               <img
                 className="page-card-img"
-                src={`${process.env.REACT_APP_API_URL}${contact?.img[0].url}`}
-                alt={contact?.title}
+                src={`${process.env.REACT_APP_API_URL}${page?.img[0].url}`}
+                alt={page?.title}
               />
             </ClickArea>
           </Link>
         </ContactBoxCardFront>
         <ContactBoxCardBack>
-          <Markdown source={contact?.content} />
+          <Markdown source={page?.content} />
         </ContactBoxCardBack>
       </ContactBox>
     </ContactWrapper>

@@ -16,8 +16,10 @@ const Bar = styled.div`
 `;
 
 const NavLink = styled(ReactLink)`
-  height: 22px;
   color: ${(props) => props.theme.colors.fontColors.medium};
+  &.text {
+    height: 0.9rem;
+  }
   transition: 0.3s;
   &:hover {
     color: ${(props) => props.theme.colors.accents.primary};
@@ -25,12 +27,19 @@ const NavLink = styled(ReactLink)`
 `;
 
 const Wrapper = styled.div`
-  padding: 6px 10px;
+  padding: 1.2vh 1vw;
   background-color: ${(props) => props.theme.colors.bg};
   box-shadow: 0px 3px 9px -3px rgba(0, 0, 0, 0.7);
   border-radius: 50px;
   display: flex;
   align-items: center;
+  font-size: 1.1rem;
+  & > div:nth-child(2) {
+    margin: 0 2rem;
+  }
+  & > * {
+    line-height: 100%;
+  }
 `;
 
 interface Props {
@@ -40,10 +49,9 @@ interface Props {
 
 export const Header: React.FC<Props> = ({ on, toggle }) => {
   const [resume, setResume] = useState<Resume>();
-  const [fetching, setFetching] = useState(false);
 
   useEffect(() => {
-    api(`${process.env.REACT_APP_API_URL}/resume`, setResume, setFetching);
+    api(`${process.env.REACT_APP_API_URL}/resume`, setResume);
   }, []);
 
   return (
@@ -54,6 +62,7 @@ export const Header: React.FC<Props> = ({ on, toggle }) => {
         </NavLink>
         <ModeToggle on={on} onClick={toggle} />
         <NavLink
+          className="text"
           target={"_blank"}
           to={(location) => ({
             ...location,

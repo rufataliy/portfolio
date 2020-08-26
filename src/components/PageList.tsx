@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { BoxWrapper, BoxLoader } from "./views";
 import { PageCard } from "./PageCard";
 import { Page as Model } from "../models";
 import { Route } from "react-router-dom";
 import { About, ProjectList, Contact } from "./pages";
 import { api } from "../util";
+import { Context } from "../Context";
 
 interface Component {
   [key: string]: React.ReactNode;
@@ -18,6 +19,7 @@ const components: Component = {
 export const PageList: React.FC = () => {
   const [pages, setPages] = useState<Model[]>([]);
   const [fetching, setFetching] = useState(false);
+  const counts: { [key: string]: any } = useContext(Context);
 
   useEffect(() => {
     console.log("render");
@@ -39,13 +41,14 @@ export const PageList: React.FC = () => {
         );
       })}
       <Route exact path={["/", "/contact"]}>
-        <BoxLoader loading={loading}>
+        <BoxLoader count={counts?.pages || 0} loading={loading}>
           {pages.map((item) => {
-            return <PageCard key={item.id} page={item} />;
+            if (item.type === "regular") {
+              return <PageCard key={item.id} page={item} />;
+            } else if (item.type === "extended") {
+              return <Contact page={item} />;
+            }
           })}
-          <Route exact path={["/", "/contact"]}>
-            <Contact />
-          </Route>
         </BoxLoader>
       </Route>
     </BoxWrapper>

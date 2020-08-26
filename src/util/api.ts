@@ -25,6 +25,10 @@ export const api: UseApi = (url, callback, setStatus) => {
         }
       })
       .catch((err) => console.log(err))
-      .finally(() => setStatus && setStatus(false));
+      .finally(() => {
+        setTimeout(() => {
+          setStatus && setStatus(false);
+        }, 700);
+      });
   });
 };

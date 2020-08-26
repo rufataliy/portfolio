@@ -5,24 +5,33 @@ interface Props {
 }
 
 export const Toggle = styled.div<Props>`
-  width: 60px;
-  height: 20px;
+  width: 2.8rem;
+  height: 100%;
   border: 1px solid ${(props) => props.theme.colors.fontColors.medium};
   border-radius: 50px;
   position: relative;
   display: inline-block;
   cursor: pointer;
 
-  &:after {
+  &:before {
     content: "";
     position: absolute;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: ${(props) =>
+      props.on
+        ? props.theme.colors.fontColors.medium
+        : props.theme.colors.accents.primary};
     animation: ${(props) => (props.on ? "goLeft" : "goRight")} 0.2s 1
       cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    height: 16px;
-    width: 16px;
+    height: 1.3rem;
+    width: 1.3rem;
     border-radius: 100%;
-    background: ${(props) => props.theme.colors.fontColors.medium};
+    background: ${(props) => props.theme.colors.bg};
+    border: 1px solid ${(props) => props.theme.colors.fontColors.medium};
     top: 50%;
     transform: translateY(-50%);
   }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Toggle, Icon } from "./views";
+import { Toggle } from "./views";
 import styled from "styled-components";
 
 interface Props {
@@ -11,8 +11,12 @@ interface WrapperProps {
   on: boolean;
 }
 
+const SUN = "sun-alt";
+const MOON = "moon";
+
 const Wrapper = styled.div<WrapperProps>`
   display: flex;
+  height: 100%;
   align-items: center;
   & i {
     &[class$="sun-alt"] {
@@ -27,9 +31,11 @@ const Wrapper = styled.div<WrapperProps>`
 export const ModeToggle: React.FC<Props> = ({ onClick, on }) => {
   return (
     <Wrapper on={on}>
-      <Icon name={"sun-alt"} />
-      <Toggle on={on} onClick={onClick} />
-      <Icon name={"moon"} />
+      <Toggle
+        on={on}
+        className={`icofont-${on ? SUN : MOON}`}
+        onClick={onClick}
+      />
     </Wrapper>
   );
 };

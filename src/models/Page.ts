@@ -2,6 +2,8 @@ export interface Page {
   id: string;
   title: string;
   path: string;
+  type: "regular" | "extended";
+  content?: string;
   img: [
     {
       url: string;

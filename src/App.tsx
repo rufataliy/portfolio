@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PageList, Header } from "./components";
 import { ThemeProvider } from "styled-components";
 import { DarkTheme, LightTheme, GlobalStyles } from "./theme";
 import styled from "styled-components";
 import { Router, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import { api } from "./util";
+import { Context } from "./Context";
 
 const history = createBrowserHistory();
 
@@ -22,6 +24,12 @@ const Wrapper = styled.div`
 `;
 
 function App() {
+  const [counts, setCounts] = useState({});
+
+  useEffect(() => {
+    api(`${process.env.REACT_APP_API_URL}/counts`, setCounts);
+  }, []);
+
   const [lightMode, setLightMode] = useState(
     window.localStorage.getItem("mode")
   );
@@ -46,15 +54,17 @@ function App() {
     <Router history={history}>
       <ThemeProvider theme={getTheme(lightMode)}>
         <GlobalStyles />
-        <Wrapper>
-          <Header
-            on={lightMode === "light"}
-            toggle={() => handleModeChange()}
-          />
-          <Switch>
-            <PageList />
-          </Switch>
-        </Wrapper>
+        <Context.Provider value={{ ...counts }}>
+          <Wrapper>
+            <Header
+              on={lightMode === "light"}
+              toggle={() => handleModeChange()}
+            />
+            <Switch>
+              <PageList />
+            </Switch>
+          </Wrapper>
+        </Context.Provider>
       </ThemeProvider>
     </Router>
   );

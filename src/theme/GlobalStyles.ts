@@ -81,6 +81,11 @@ export const GlobalStyles = createGlobalStyle`
     margin:0;
     padding:0;
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 #root{
     height: 100vh;
     width: 100vw;
@@ -88,5 +93,14 @@ export const GlobalStyles = createGlobalStyle`
 a{
     text-decoration: none;
     color: inherit;
+}
+@media screen and (min-width: 1900px){
+  html{
+    font-size:20px;
+  }
+  .bar{
+    transform: scale(1.5);
+    transform-origin: top;
+  }
 }
 `;
