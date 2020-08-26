@@ -22,7 +22,6 @@ export const PageList: React.FC = () => {
   const counts: { [key: string]: any } = useContext(Context);
 
   useEffect(() => {
-    console.log("render");
     api(`${process.env.REACT_APP_API_URL}/pages`, setPages, setFetching);
   }, []);
 
