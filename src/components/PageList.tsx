@@ -43,11 +43,12 @@ export const PageList: React.FC = () => {
       <Route exact path={["/", "/contact"]}>
         <BoxLoader count={counts?.pages || 0} loading={loading}>
           {pages.map((item) => {
-            return <PageCard key={item.id} page={item} />;
+            if (item.type === "regular") {
+              return <PageCard key={item.id} page={item} />;
+            } else if (item.type === "extended") {
+              return <Contact page={item} />;
+            }
           })}
-          <Route exact path={["/", "/contact"]}>
-            <Contact />
-          </Route>
         </BoxLoader>
       </Route>
     </BoxWrapper>
