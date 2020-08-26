@@ -1,13 +1,13 @@
 import React from "react";
 import { MockBox } from "./MockBox";
 
-const mockArr = new Array(4).fill(undefined);
-
 interface Props {
   loading: boolean;
+  count: number;
 }
 
-export const BoxLoader: React.FC<Props> = ({ loading, children }) => {
+export const BoxLoader: React.FC<Props> = ({ loading, count, children }) => {
+  const mockArr = new Array(count).fill(undefined);
   return (
     <>
       {loading
