@@ -14,7 +14,7 @@ export const About = () => {
 
   return (
     <Content>
-      <Markdown source={about?.content} />;
+      <Markdown source={about?.content} />
     </Content>
   );
 };
