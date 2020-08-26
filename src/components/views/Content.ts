@@ -5,7 +5,15 @@ export const Content = styled.div`
   max-width: 900px;
   margin: 0 auto;
   position: relative;
-  height: 100%;
+  padding-bottom: 70px;
+  min-height:100%;
+  a{
+    transition: 0.3s ease-out;
+    text-decoration: underline;
+  }
+  a:hover{
+    color: ${(props) => props.theme.colors.accents.primary}
+  }
   p {
     line-height: 1.3;
     font-size: 1.4rem;
