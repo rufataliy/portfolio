@@ -1,5 +1,4 @@
 export interface Shadow {
-  color: string;
-  value: string;
+  default: string;
   hover: string;
 }

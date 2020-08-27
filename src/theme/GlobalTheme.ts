@@ -13,15 +13,13 @@ const fontColorsLight = {
 };
 
 const shadowDark = {
-  color: "rgba(0, 0, 0, 0.7)",
-  value: "0px 9px 17px -6px",
-  hover: "rgba(0, 0, 0, 0.9)",
+  default: "0px 9px 17px -6px rgba(0, 0, 0, 0.8)",
+  hover: "0px 14px 35px -20px rgba(0, 0, 0, 0.7)",
 };
 
 const shadowLight = {
-  color: "rgba(0, 0, 0, 0.7)",
-  value: "0px 9px 17px -6px",
-  hover: "rgba(0, 0, 0, 0.9)",
+  default: "0px 9px 17px -6px rgba(0, 0, 0, 0.8)",
+  hover: "0px 14px 35px -20px rgba(0, 0, 0, 0.7)",
 };
 
 const accents = {

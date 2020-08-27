@@ -4,6 +4,7 @@ export const boxCommon = styled.div`
   position: relative;
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.bg};
+  box-shadow:  ${({ theme }) => theme.colors.shadow.default};
   box-sizing: border-box;
   padding: 1vw;
   height: 250px;
@@ -25,11 +26,11 @@ export const boxCommon = styled.div`
     right: 0;
     bottom: -11%;
   }
-
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0px -9px 25px -15px ${({ theme }) => theme.colors.shadow.hover};
+    box-shadow: ${({ theme }) => theme.colors.shadow.hover};
   }
+}
   @media screen and (min-width: 1440px) {
     height: 30vh;
     width: 30vw;
@@ -37,9 +38,7 @@ export const boxCommon = styled.div`
 `;
 
 export const Box = styled(boxCommon)`
-  box-shadow: 0px 2px 17px -6px ${({ theme }) => theme.colors.shadow.color};
-  animation: shadowPop 0.5s 1 ease-out forwards;
-  animation-delay: 0.1s;
+  animation: shadowPop 0.9s 1 cubic-bezier(0.36, 0.51, 0.49, 1.59) backwards;
 
   .project-card-img {
     width: 100%;
@@ -48,11 +47,10 @@ export const Box = styled(boxCommon)`
 
   @keyframes shadowPop {
     0% {
-      box-shadow: 0px 2px 17px -6px ${({ theme }) => theme.colors.shadow.color};
+      box-shadow: 0px 2px 17px -6px rgba(0, 0, 0, 0.7);
     }
     100% {
-      box-shadow: ${({ theme }) =>
-        `${theme.colors.shadow.value} ${theme.colors.shadow.color}`};
+      box-shadow: ${({ theme }) => theme.colors.shadow.default};
     }
   }
 `;

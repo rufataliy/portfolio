@@ -6,10 +6,14 @@ export const ContactBox = styled.div`
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.6s;
+  transition: transform 0.6s cubic-bezier(0.4, 0.85, 0.56, 0.91),
+    box-shadow 0.2s linear;
   transform-style: preserve-3d;
   border-radius: 10px;
-  box-shadow: 0px 9px 17px -6px rgba(0, 0, 0, 0.7);
+  box-shadow: ${({ theme }) => theme.colors.shadow.default};
+  &:hover {
+    box-shadow: ${({ theme }) => theme.colors.shadow.hover};
+  }
 `;
 
 interface ContactProps {
