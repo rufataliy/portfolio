@@ -6,19 +6,20 @@ export const Content = styled.div`
   margin: 0 auto;
   position: relative;
   padding-bottom: 70px;
-  min-height:100%;
-  a{
+  min-height: 100%;
+  a {
     transition: 0.3s ease-out;
     text-decoration: underline;
   }
-  a:hover{
-    color: ${(props) => props.theme.colors.accents.primary}
+  a:hover {
+    color: ${(props) => props.theme.colors.accents.primary};
   }
   p {
-    line-height: 1.3;
-    font-size: 1.4rem;
-}
+    line-height: 1.5;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
   }
+
   img {
     width: 100%;
     border-radius: 5px;
