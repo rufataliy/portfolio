@@ -5,6 +5,7 @@ import { projects } from "./projects";
 import { contact } from "./contact";
 import { counts } from "./counts";
 import { resume } from "./resume";
+import { blogs } from "./blogs";
 
 export const handler = [
   rest.get("/pages", (req, res, ctx) => {
@@ -29,5 +30,13 @@ export const handler = [
   }),
   rest.get("/resume", (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(resume));
+  }),
+  rest.get("/blogs", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(blogs));
+  }),
+  rest.get("/blogs/:id", (req, res, ctx) => {
+    const { id } = req.params;
+    const blog = blogs.find((blog) => blog.id === id);
+    return res(ctx.status(200), ctx.json(blog));
   }),
 ];
