@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-import { BoxWrapper, BoxLoader } from "./views";
+import { BoxWrapper, BoxLoader, Box } from "./views";
 import { PageCard } from "./PageCard";
 import { Page as Model } from "../models";
 import { Route } from "react-router-dom";
-import { About, ProjectList, Contact } from "./pages";
+import { About, ProjectList, Contact, Blogs } from "./pages";
 import { api } from "../util";
 import { Context } from "../Context";
 
@@ -14,6 +14,7 @@ interface Component {
 const components: Component = {
   about: <About />,
   projects: <ProjectList />,
+  blogs: <Blogs />,
 };
 
 export const PageList: React.FC = () => {
