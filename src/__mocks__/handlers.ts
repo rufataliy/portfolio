@@ -3,6 +3,7 @@ import { pages } from "./pages";
 import { about } from "./about";
 import { projects } from "./projects";
 import { contact } from "./contact";
+import { counts } from "./counts";
 import { resume } from "./resume";
 
 export const handler = [
@@ -22,6 +23,9 @@ export const handler = [
   }),
   rest.get("/contact", (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(contact));
+  }),
+  rest.get("/counts", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(counts));
   }),
   rest.get("/resume", (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(resume));
