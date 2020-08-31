@@ -27,7 +27,7 @@ const NavLink = styled(ReactLink)`
 `;
 
 const Wrapper = styled.div`
-  padding: 1.2vh 1vw;
+  padding: 1.2vh 1.5rem;
   background-color: ${(props) => props.theme.colors.bg};
   box-shadow: 0px 3px 9px -3px rgba(0, 0, 0, 0.7);
   border-radius: 50px;
