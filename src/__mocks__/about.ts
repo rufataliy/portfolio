@@ -1,5 +1,5 @@
 export const about = {
   title: "About",
-  content: "<p>it is content</p>",
+  content: "# it is content",
   img: "asd",
 };
