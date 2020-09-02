@@ -1,16 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   Contact as ContactWrapper,
   ContactBox,
   ContactBoxCardBack,
   ContactBoxCardFront,
   Title,
-} from "../views";
+} from "../../views";
 import { Page as Model } from "models";
 import Markdown from "react-markdown";
 import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
-import { api } from "../../util";
 
 const ClickArea = styled.div`
   position: absolute;

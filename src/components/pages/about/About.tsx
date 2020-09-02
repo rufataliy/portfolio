@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Markdown from "react-markdown";
-import { api } from "../../util";
+import { api } from "../../../util";
 import { Content } from "components/views";
 
 export const About = () => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect, Suspense } from "react";
 import { useRouteMatch } from "react-router-dom";
 import { Content, ContentLoader } from "components/views";
 import { Blog as Model } from "models";
-import { CodeBlock } from "../CodeBlock";
+import { CodeBlock } from "components/views";
 import { api } from "../../../util";
 
 const Markdown = React.lazy(() => import("react-markdown"));

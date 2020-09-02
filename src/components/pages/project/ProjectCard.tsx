@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, Title } from "../views";
-import { Project as Model } from "../../models";
+import { Box, Title } from "../../views";
+import { Project as Model } from "models";
 import { Link, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
 

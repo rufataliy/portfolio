@@ -10,23 +10,8 @@ interface Props {
 
 const Box = styled(BoxDefault)`
   height: 150px;
-`;
-
-const ImgWrapper = styled.div`
-  height: 100%;
-  width: 40%;
-  max-width: 40%;
-  float: right;
-  position: relative;
-  overflow: hidden;
-  border-radius: 5px;
-  & > img {
-    width: auto;
-    height: 100%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  @media screen and (min-width: 1440px) {
+    height: 20vh;
   }
 `;
 
@@ -36,19 +21,23 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 1.5rem;
+  line-height: 1;
+  & > * {
+    margin-bottom: 1rem;
+  }
 `;
 
 export const BlogCard: React.FC<Props> = React.memo(({ blog }) => {
   const { url } = useRouteMatch();
 
   return (
-    <Link to={`${url}/${blog.id}`}>
-      <Box>
+    <Box>
+      <Link to={`${url}/${blog.id}`}>
         <Wrapper>
           <h2>{blog.title}</h2>
           <p>{blog.desc}</p>
         </Wrapper>
-      </Box>
-    </Link>
+      </Link>
+    </Box>
   );
 });

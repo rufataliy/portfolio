@@ -1,9 +1,8 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { useRouteMatch } from "react-router-dom";
-import { Content, ContentLoader } from "components/views";
+import { Content, ContentLoader, CodeBlock } from "components/views";
 import { Project as Model } from "models";
-import { CodeBlock } from "./CodeBlock";
-import { api } from "../../util";
+import { api } from "../../../util";
 const Markdown = React.lazy(() => import("react-markdown"));
 
 export const Project = () => {
