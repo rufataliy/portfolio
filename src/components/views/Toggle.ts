@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface Props {
-  on: boolean;
+  isOn: boolean;
 }
 
 export const Toggle = styled.div<Props>`
@@ -22,10 +22,10 @@ export const Toggle = styled.div<Props>`
     justify-content: center;
     font-size: 1rem;
     color: ${(props) =>
-      props.on
+      props.isOn
         ? props.theme.colors.fontColors.medium
         : props.theme.colors.accents.primary};
-    animation: ${(props) => (props.on ? "goLeft" : "goRight")} 0.2s 1
+    animation: ${(props) => (props.isOn ? "goLeft" : "goRight")} 0.2s 1
       cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     height: 1.3rem;
     width: 1.3rem;

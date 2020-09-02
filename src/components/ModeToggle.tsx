@@ -8,7 +8,7 @@ interface Props {
 }
 
 interface WrapperProps {
-  on: boolean;
+  isLightMode: boolean;
 }
 
 const SUN = "sun-alt";
@@ -20,19 +20,21 @@ const Wrapper = styled.div<WrapperProps>`
   align-items: center;
   & i {
     &[class$="sun-alt"] {
-      ${(props) => props.on && `color: ${props.theme.colors.accents.primary}`};
+      ${(props) =>
+        props.isLightMode && `color: ${props.theme.colors.accents.primary}`};
     }
     &[class$="moon"] {
-      ${(props) => !props.on && `color: ${props.theme.colors.accents.primary}`};
+      ${(props) =>
+        !props.isLightMode && `color: ${props.theme.colors.accents.primary}`};
     }
   }
 `;
 
 export const ModeToggle: React.FC<Props> = ({ onClick, on }) => {
   return (
-    <Wrapper on={on}>
+    <Wrapper isLightMode={on}>
       <Toggle
-        on={on}
+        isOn={on}
         className={`icofont-${on ? SUN : MOON}`}
         onClick={onClick}
       />
