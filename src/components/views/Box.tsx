@@ -5,11 +5,11 @@ export const boxCommon = styled.div`
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.bg};
   box-shadow:  ${({ theme }) => theme.colors.shadow.default};
+  transition: box-shadow 0.4s linear, transform 0.3s linear;
   box-sizing: border-box;
   padding: 1vw;
   height: 250px;
   width: 500px;
-  transition: 0.2s linear;
   border-radius: 10px;
   cursor: pointer;
   margin: 20px;

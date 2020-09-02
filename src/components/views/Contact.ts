@@ -7,7 +7,7 @@ export const ContactBox = styled.div`
   height: 100%;
   text-align: center;
   transition: transform 0.6s cubic-bezier(0.4, 0.85, 0.56, 0.91),
-    box-shadow 0.2s linear;
+    box-shadow 0.4s linear;
   transform-style: preserve-3d;
   border-radius: 10px;
   box-shadow: ${({ theme }) => theme.colors.shadow.default};
@@ -80,34 +80,4 @@ export const ContactBoxCardBack = styled(ContactBoxCard)`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-`;
-
-export const LinkShadowHover = styled.div`
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  a {
-    font-size: 1.6rem;
-  }
-  h3 {
-    margin: 0;
-    font-size: 1.6rem;
-  }
-  span {
-    text-align: center;
-  }
-  span a {
-    display: inline-block;
-    transition: 0.4s;
-  }
-  & a,
-  a:visited {
-    color: inherit;
-  }
-  span:hover a {
-    box-shadow: 0px 11px 20px -8px grey;
-    transform: translateY(-3px);
-    font-size: calc(100%+1px);
-  }
 `;
