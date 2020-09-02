@@ -13,6 +13,7 @@ Highlighter.registerLanguage("javascript", js);
 const Wrapper = styled.div`
   & pre {
     background: #001e31 !important;
+    border-radius: 5px;
   }
 `;
 
