@@ -20,7 +20,7 @@ export const handler = [
   rest.get("/projects/:id", (req, res, ctx) => {
     const { id } = req.params;
     const project = projects.find((project) => project.id === id);
-    return res(ctx.status(200), ctx.json({ ...project }));
+    return res(ctx.status(200), ctx.json(project));
   }),
   rest.get("/contact", (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(contact));

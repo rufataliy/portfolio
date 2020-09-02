@@ -20,15 +20,15 @@ export const api: UseApi = (url, callback, setStatus) => {
       .then((data) => {
         if (!data.error) {
           resolve(callback(data));
-        } else {
-          throw Error("Request error");
         }
       })
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        reject(err);
+      })
       .finally(() => {
         setTimeout(() => {
           setStatus && setStatus(false);
-        }, 700);
+        }, 500);
       });
   });
 };
