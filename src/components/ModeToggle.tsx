@@ -18,6 +18,7 @@ const Wrapper = styled.div<WrapperProps>`
   display: flex;
   height: 100%;
   align-items: center;
+  min-height: 1rem;
   & i {
     &[class$="sun-alt"] {
       ${(props) =>
