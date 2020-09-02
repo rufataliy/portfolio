@@ -15,9 +15,6 @@ const Wrapper = styled.div`
   color: ${({ theme }) => theme.colors.fontColors.medium};
   height: 100%;
   width: 100%;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
 `;
 
 function App() {
