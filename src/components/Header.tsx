@@ -34,7 +34,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   font-size: 1.1rem;
-  min-height: 1.5rem;
+  min-height: 2rem;
   & > div:nth-child(2) {
     margin: 0 2rem;
   }
