@@ -12,3 +12,4 @@ export {
 } from "./Contact";
 export { BoxLoader } from "./BoxLoader";
 export { ContentLoader } from "./ContentLoader";
+export { CodeBlock } from "./CodeBlock";
