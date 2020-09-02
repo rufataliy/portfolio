@@ -21,7 +21,7 @@ export const ContentLoader: React.FC<Props> = ({ loading, children }) => {
     <>
       {loading ? (
         <Wrapper>
-          <img src={contentLoader} />
+          <img src={contentLoader} alt="content loader" />
         </Wrapper>
       ) : (
         children
