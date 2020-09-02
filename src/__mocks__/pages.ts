@@ -31,7 +31,7 @@ export const pages: Page[] = [
     id: "2",
     title: "Projects",
     path: "projects",
-    type: "extended",
+    type: "regular",
     img: [
       {
         url: project,
@@ -57,7 +57,7 @@ export const pages: Page[] = [
     title: "Contact",
     path: "contact",
     type: "extended",
-    content: "contact content",
+    content: "contact content  [asd](adsad)",
     img: [
       {
         url: contact,
