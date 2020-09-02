@@ -10,7 +10,7 @@ const Bar = styled.div`
   display: flex;
   justify-content: center;
   padding: 5px;
-  min-height: 2rem;
+  min-height: 2.7rem;
   img::selection {
     background: transparent;
   }
