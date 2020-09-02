@@ -4,7 +4,8 @@ import { sanntek } from "./img";
 export const blogs: Blog[] = [
   {
     title: "Asyncornous javascript",
-    desc: "async nature javascript is the hting ever happened to us",
+    desc:
+      "async nature javascript is the hting ever happened to us asd s dddddddsd sdsa dasd ",
     id: "1",
     img: [
       {
@@ -16,7 +17,7 @@ export const blogs: Blog[] = [
   {
     title: "Prototypical inheritence",
     desc: "async nature javascript is the hting ever happened to us",
-    id: "1",
+    id: "2",
     img: [
       {
         url: sanntek,
@@ -27,7 +28,7 @@ export const blogs: Blog[] = [
   {
     title: "React tables",
     desc: "How to create react table component",
-    id: "1",
+    id: "3",
     img: [
       {
         url: sanntek,
@@ -37,8 +38,8 @@ export const blogs: Blog[] = [
   },
   {
     title: "Asyncornous javascript",
-    desc: "async nature javascript is the hting ever happened to us",
-    id: "1",
+    desc: "async nature javascript is the hting ever happened to us ",
+    id: "4",
     img: [
       {
         url: sanntek,
@@ -49,7 +50,7 @@ export const blogs: Blog[] = [
   {
     title: "Asyncornous javascript",
     desc: "async nature javascript is the hting ever happened to us",
-    id: "1",
+    id: "5",
     img: [
       {
         url: sanntek,
