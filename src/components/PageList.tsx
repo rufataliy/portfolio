@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
-import { BoxWrapper, BoxLoader, Box } from "./views";
+import { BoxWrapper, BoxLoader } from "./views";
 import { PageCard } from "./PageCard";
 import { Page as Model } from "../models";
 import { Route } from "react-router-dom";
-import { About, ProjectList, Contact, Blogs } from "./pages";
 import { api } from "../util";
+import { About, Projects, Contact, Blogs } from "./pages";
 import { Context } from "../Context";
 
 interface Component {
@@ -13,7 +13,7 @@ interface Component {
 
 const components: Component = {
   about: <About />,
-  projects: <ProjectList />,
+  projects: <Projects />,
   blogs: <Blogs />,
 };
 
@@ -34,6 +34,7 @@ export const PageList: React.FC = () => {
         return (
           components[item.path] && (
             <Route
+              key={item.id}
               path={"/" + item.path}
               render={() => components[item.path]}
             />
@@ -46,8 +47,8 @@ export const PageList: React.FC = () => {
             if (item.type === "regular") {
               return <PageCard key={item.id} page={item} />;
             } else if (item.type === "extended") {
-              return <Contact page={item} />;
-            }
+              return <Contact key={item.id} page={item} />;
+            } else return null;
           })}
         </BoxLoader>
       </Route>
