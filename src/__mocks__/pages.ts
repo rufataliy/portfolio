@@ -57,7 +57,8 @@ export const pages: Page[] = [
     title: "Contact",
     path: "contact",
     type: "extended",
-    content: "contact content  [asd](adsad)",
+    content:
+      "+1 613 879 5442\n\nrufataliyevbakou@gmail.com\n\n[Github](https://github.com/rufataliy)\n\n[Linkedin](https://www.linkedin.com/in/rufat-aliyev/)",
     img: [
       {
         url: contact,
