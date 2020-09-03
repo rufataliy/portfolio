@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Icon } from "./views";
 import { ModeToggle } from "./ModeToggle";
 import { Link as ReactLink } from "react-router-dom";
 import { Resume } from "models";
@@ -19,7 +18,7 @@ const Bar = styled.div`
 const NavLink = styled(ReactLink)`
   color: ${(props) => props.theme.colors.fontColors.medium};
   &.text {
-    height: 0.9rem;
+    height: 2rem;
   }
   transition: 0.3s;
   &:hover {
@@ -28,19 +27,20 @@ const NavLink = styled(ReactLink)`
 `;
 
 const Wrapper = styled.div`
-  padding: 1.2vh 1.5rem;
+padding 0 1.5rem;
   background-color: ${(props) => props.theme.colors.bg};
   box-shadow: 0px 3px 9px -3px rgba(0, 0, 0, 0.7);
   border-radius: 50px;
   display: flex;
   align-items: center;
   font-size: 1.1rem;
-  min-height: 2rem;
+  min-height: 2.2rem;
   & > div:nth-child(2) {
     margin: 0 2rem;
   }
   & > * {
-    line-height: 100%;
+    padding: 0.5rem;
+    line-height: 1;
   }
 `;
 
@@ -59,8 +59,8 @@ export const Header: React.FC<Props> = ({ on, toggle }) => {
   return (
     <Bar>
       <Wrapper>
-        <NavLink to={"/"}>
-          <Icon name={"ui-home"} />
+        <NavLink className="text" to={"/"}>
+          Home
         </NavLink>
         <ModeToggle on={on} onClick={toggle} />
         <NavLink
