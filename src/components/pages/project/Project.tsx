@@ -3,7 +3,7 @@ import { useRouteMatch } from "react-router-dom";
 import { Content, ContentLoader, CodeBlock } from "components/views";
 import { Project as Model } from "models";
 import { api } from "../../../util";
-const Markdown = React.lazy(() => import("react-markdown"));
+import Markdown from "react-markdown";
 
 export const Project = () => {
   const [project, setProject] = useState<Model>();
@@ -17,9 +17,7 @@ export const Project = () => {
   return (
     <Content>
       <ContentLoader loading={fetching}>
-        <Suspense fallback={<p>loading</p>}>
-          <Markdown renderers={{ code: CodeBlock }} source={project?.content} />
-        </Suspense>
+        <Markdown renderers={{ code: CodeBlock }} source={project?.content} />
       </ContentLoader>
     </Content>
   );
