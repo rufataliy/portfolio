@@ -11,13 +11,18 @@ import { Context } from "./Context";
 const history = createBrowserHistory();
 
 const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.colors.bg};
-  color: ${({ theme }) => theme.colors.fontColors.medium};
   height: 100%;
   width: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+`;
+
+const Background = styled.div`
+  background-color: ${({ theme }) => theme.colors.bg};
+  color: ${({ theme }) => theme.colors.fontColors.medium};
+  height: 100%;
+  width: 100%;
 `;
 
 function App() {
@@ -52,15 +57,17 @@ function App() {
       <ThemeProvider theme={getTheme(lightMode)}>
         <GlobalStyles />
         <Context.Provider value={{ ...counts }}>
-          <Wrapper>
-            <Header
-              on={lightMode === "light"}
-              toggle={() => handleModeChange()}
-            />
-            <Switch>
-              <PageList />
-            </Switch>
-          </Wrapper>
+          <Background>
+            <Wrapper>
+              <Header
+                on={lightMode === "light"}
+                toggle={() => handleModeChange()}
+              />
+              <Switch>
+                <PageList />
+              </Switch>
+            </Wrapper>
+          </Background>
         </Context.Provider>
       </ThemeProvider>
     </Router>
