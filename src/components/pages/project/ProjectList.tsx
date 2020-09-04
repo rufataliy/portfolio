@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useRouteMatch } from "react-router-dom";
 import { Project as Model } from "../../../models";
 import { ProjectCard } from "./ProjectCard";
-import { BoxLoader } from "components/views";
+import { BoxLoader, BoxWrapper } from "components/views";
 import { api } from "../../../util";
 import { Context } from "Context";
 
@@ -20,9 +20,11 @@ export const ProjectList: React.FC = React.memo(() => {
 
   return (
     <BoxLoader count={counts?.projects || 0} loading={loading}>
-      {projects.map((project) => {
-        return <ProjectCard key={project.id} project={project} />;
-      })}
+      <BoxWrapper>
+        {projects.map((project) => {
+          return <ProjectCard key={project.id} project={project} />;
+        })}
+      </BoxWrapper>
     </BoxLoader>
   );
 });

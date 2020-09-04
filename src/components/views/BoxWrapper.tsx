@@ -9,6 +9,7 @@ export const BoxWrapper = styled.div`
   padding-bottom: 30px;
   margin: 0 auto;
   overflow: auto;
+  height: 100%;
   & > * {
     max-width: 100%;
   }

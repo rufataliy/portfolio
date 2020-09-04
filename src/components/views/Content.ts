@@ -6,7 +6,8 @@ export const Content = styled.div`
   margin: 0 auto;
   position: relative;
   padding-bottom: 70px;
-  min-height: 100%;
+  height: 100%;
+  overflow: auto;
   & > * {
     margin-bottom: 1.2rem;
   }
