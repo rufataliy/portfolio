@@ -29,7 +29,7 @@ export const PageList: React.FC = () => {
   const loading = (Array.isArray(pages) && pages.length < 1) || fetching;
 
   return (
-    <BoxWrapper>
+    <>
       {pages.map((item) => {
         return (
           components[item.path] && (
@@ -41,17 +41,19 @@ export const PageList: React.FC = () => {
           )
         );
       })}
-      <Route exact path={["/", "/contact"]}>
-        <BoxLoader count={counts?.pages || 0} loading={loading}>
-          {pages.map((item) => {
-            if (item.type === "regular") {
-              return <PageCard key={item.id} page={item} />;
-            } else if (item.type === "extended") {
-              return <Contact key={item.id} page={item} />;
-            } else return null;
-          })}
-        </BoxLoader>
-      </Route>
-    </BoxWrapper>
+      <BoxWrapper>
+        <Route exact path={["/", "/contact"]}>
+          <BoxLoader count={counts?.pages || 0} loading={loading}>
+            {pages.map((item) => {
+              if (item.type === "regular") {
+                return <PageCard key={item.id} page={item} />;
+              } else if (item.type === "extended") {
+                return <Contact key={item.id} page={item} />;
+              } else return null;
+            })}
+          </BoxLoader>
+        </Route>
+      </BoxWrapper>
+    </>
   );
 };
