@@ -49,8 +49,8 @@ function App() {
 
   return (
     <Router history={history}>
+      <GlobalStyles />
       <ThemeProvider theme={getTheme(lightMode)}>
-        <GlobalStyles />
         <Context.Provider value={{ ...counts }}>
           <Wrapper>
             <Header
