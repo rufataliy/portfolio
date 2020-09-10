@@ -42,8 +42,8 @@ export const PageList: React.FC = () => {
         );
       })}
       <Route exact path={["/", "/contact"]}>
-        <BoxWrapper>
-          <BoxLoader count={counts?.pages || 0} loading={loading}>
+        <BoxLoader count={counts?.pages || 0} loading={loading}>
+          <BoxWrapper>
             {pages.map((item) => {
               if (item.type === "regular") {
                 return <PageCard key={item.id} page={item} />;
@@ -51,8 +51,8 @@ export const PageList: React.FC = () => {
                 return <Contact key={item.id} page={item} />;
               } else return null;
             })}
-          </BoxLoader>
-        </BoxWrapper>
+          </BoxWrapper>
+        </BoxLoader>
       </Route>
     </>
   );
