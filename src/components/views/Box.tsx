@@ -5,7 +5,7 @@ export const boxCommon = styled.div`
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.bg};
   box-shadow:  ${({ theme }) => theme.colors.shadow.default};
-  transition: box-shadow 0.4s linear, transform 0.3s linear;
+  transition: box-shadow 0.3s linear, transform 0.3s linear;
   box-sizing: border-box;
   padding: 1vw;
   height: 250px;
@@ -27,7 +27,7 @@ export const boxCommon = styled.div`
     bottom: -11%;
   }
   &:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
     box-shadow: ${({ theme }) => theme.colors.shadow.hover};
   }
 }
