@@ -16,4 +16,5 @@ export const Title = styled.div`
   border-top-right-radius: 0;
   font-size: 1.8rem;
   margin: 0;
+  min-height: 66px;
 `;
