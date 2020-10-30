@@ -4,6 +4,7 @@ export const Content = styled.div`
   width: 95%;
   max-width: 900px;
   margin: 0 auto;
+  padding-top: 3rem;
   position: relative;
   padding-bottom: 70px;
   height: 100%;
