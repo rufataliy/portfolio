@@ -57,14 +57,18 @@ export const ProjectCard: React.FC<Props> = React.memo(({ project }) => {
   return (
     <Box>
       <CardInfo className="card-info">
-        <h2>
-          <a href={project.link}>Demo</a>
-          <Delimiter>|</Delimiter>
-        </h2>
-        <h2>
-          <a href={project.code_link}>Github</a>
-          <Delimiter>|</Delimiter>
-        </h2>
+        {project.link && (
+          <h2>
+            <a href={project.link}>Demo</a>
+            <Delimiter>|</Delimiter>
+          </h2>
+        )}
+        {project.code_link && (
+          <h2>
+            <a href={project.code_link}>Github</a>
+            <Delimiter>|</Delimiter>
+          </h2>
+        )}
         <h2>
           <Link to={`${url}/${project.id}`}>Read more</Link>
         </h2>
