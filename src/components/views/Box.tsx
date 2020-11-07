@@ -29,6 +29,10 @@ export const boxCommon = styled.div`
   &:hover  {
     box-shadow: ${({ theme }) => theme.colors.shadow.hover};
   }
+  &:hover .card-info {
+    transform: translateY(0px);
+    opacity: 0.95;
+  }
 }
   @media screen and (min-width: 1440px) {
     height: 30vh;

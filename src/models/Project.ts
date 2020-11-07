@@ -3,6 +3,8 @@ export interface Project {
   title: string;
   content: string;
   path: string;
+  link: string;
+  code_link: string;
   img: [
     {
       url: string;
