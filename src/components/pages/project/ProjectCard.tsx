@@ -58,11 +58,11 @@ export const ProjectCard: React.FC<Props> = React.memo(({ project }) => {
     <Box>
       <CardInfo className="card-info">
         <h2>
-          <a href="#">Demo</a>
+          <a href={project.link}>Demo</a>
           <Delimiter>|</Delimiter>
         </h2>
         <h2>
-          <a href="#">Github</a>
+          <a href={project.code_link}>Github</a>
           <Delimiter>|</Delimiter>
         </h2>
         <h2>
