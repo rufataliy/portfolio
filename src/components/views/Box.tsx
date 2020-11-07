@@ -14,7 +14,7 @@ export const boxCommon = styled.div`
   cursor: pointer;
   margin: 20px;
   max-width: 100%;
-
+  transform: translateY(0px);
   & > a {
     display: inline-block;
     height: 100%;
@@ -26,8 +26,7 @@ export const boxCommon = styled.div`
     right: 0;
     bottom: -11%;
   }
-  &:hover {
-    transform: translateY(-5px);
+  &:hover  {
     box-shadow: ${({ theme }) => theme.colors.shadow.hover};
   }
 }
