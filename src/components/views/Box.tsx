@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const boxCommon = styled.div`
   position: relative;
+  overflow: hidden;
   background-color: ${({ theme }) => theme.colors.bg};
   box-shadow:  ${({ theme }) => theme.colors.shadow.default};
   transition: box-shadow 0.3s linear, transform 0.3s linear;
