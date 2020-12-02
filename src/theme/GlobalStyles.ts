@@ -86,7 +86,13 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
+  background:transparent;
+  height: 3px;
+  width:3px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #7c8188;
+  border-radius: 8px;
 }
 
 #root{
@@ -103,6 +109,16 @@ a{
   }
   .bar{
     transform: scale(1.5);
+    transform-origin: top;
+  }
+}
+
+@media screen and (min-width: 2500px){
+  html{
+    font-size:24px;
+  }
+  .bar{
+    transform: scale(1.7);
     transform-origin: top;
   }
 }

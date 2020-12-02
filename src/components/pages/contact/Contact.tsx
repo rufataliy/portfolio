@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import {
-  Contact as ContactWrapper,
-  ContactBox,
-  ContactBoxCardBack,
-  ContactBoxCardFront,
+  FlipCard,
+  FlipCardWrapper,
+  FlipCardBack,
+  FlipCardFront,
   Title,
 } from "../../views";
 import { Page as Model } from "models";
@@ -35,9 +35,9 @@ export const Contact: React.FC<Props> = React.memo(({ page }) => {
   }, [isContactPage]);
 
   return (
-    <ContactWrapper ref={ref} flip={isContactPage || false}>
-      <ContactBox>
-        <ContactBoxCardFront>
+    <FlipCard ref={ref} flip={isContactPage || false}>
+      <FlipCardWrapper>
+        <FlipCardFront>
           <Link
             className={"page-link"}
             onClick={(e) => e.stopPropagation()}
@@ -52,11 +52,11 @@ export const Contact: React.FC<Props> = React.memo(({ page }) => {
               />
             </ClickArea>
           </Link>
-        </ContactBoxCardFront>
-        <ContactBoxCardBack>
+        </FlipCardFront>
+        <FlipCardBack>
           <Markdown source={page?.content} />
-        </ContactBoxCardBack>
-      </ContactBox>
-    </ContactWrapper>
+        </FlipCardBack>
+      </FlipCardWrapper>
+    </FlipCard>
   );
 });

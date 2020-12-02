@@ -11,7 +11,6 @@ export const boxCommon = styled.div`
   height: 250px;
   width: 500px;
   border-radius: 10px;
-  cursor: pointer;
   margin: 20px;
   max-width: 100%;
   transform: translateY(0px);

@@ -10,9 +10,11 @@ export const BoxWrapper = styled.div`
   margin: 0 auto;
   overflow: auto;
   height: 100%;
-  & > * {
-    max-width: 100%;
+
+  & .project-card {
+    overflow: visible;
   }
+
   @media screen and (min-width: 300px) {
     width: 100%;
   }

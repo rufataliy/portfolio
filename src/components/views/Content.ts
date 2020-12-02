@@ -6,9 +6,10 @@ export const Content = styled.div`
   margin: 0 auto;
   padding-top: 3rem;
   position: relative;
-  padding-bottom: 70px;
+  padding-bottom: 50px;
   height: 100%;
   overflow: auto;
+  padding-right: 5px;
   & > * {
     margin-bottom: 1.2rem;
   }
@@ -37,5 +38,10 @@ export const Content = styled.div`
   img {
     width: 100%;
     border-radius: 5px;
+  }
+  @media screen and (min-width: 1290px) {
+    & p {
+      font-size: 1.4rem;
+    }
   }
 `;
