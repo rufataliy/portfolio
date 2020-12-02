@@ -16,3 +16,4 @@ export { CodeBlock } from "./CodeBlock";
 export { SectionCard } from "./SectionCard";
 export { Columns } from "./Columns";
 export { RoundedMenu } from "./RoundedMenu";
+export { Options } from "./Options";
