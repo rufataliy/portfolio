@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { BoxWrapper, BoxLoader, Columns } from "./views";
+import { BoxLoader, Columns } from "./views";
 import { PageCard } from "./PageCard";
 import { Page as Model } from "../models";
 import { Route } from "react-router-dom";
@@ -31,7 +31,6 @@ export const PageList: React.FC = () => {
   const [pages, setPages] = useState<Model[]>([]);
   const [fetching, setFetching] = useState(false);
   const counts: { [key: string]: any } = useContext(Context);
-
   useEffect(() => {
     api(`${process.env.REACT_APP_API_URL}/pages`, setPages, setFetching);
   }, []);
