@@ -55,7 +55,14 @@ export const ProjectCard: React.FC<Props> = React.memo(({ project }) => {
   const { url } = useRouteMatch();
 
   return (
-    <Box>
+    <Box className="project-card">
+      <Title>{project.title}</Title>
+      <ImgWrapper>
+        <img
+          src={process.env.REACT_APP_API_URL + project.img[0].url}
+          alt={project.title}
+        />
+      </ImgWrapper>
       <RoundedMenu>
         <div className="links">
           {project.link && (
@@ -76,13 +83,6 @@ export const ProjectCard: React.FC<Props> = React.memo(({ project }) => {
         </div>
         <Options />
       </RoundedMenu>
-      <Title>{project.title}</Title>
-      <ImgWrapper>
-        <img
-          src={process.env.REACT_APP_API_URL + project.img[0].url}
-          alt={project.title}
-        />
-      </ImgWrapper>
     </Box>
   );
 });
