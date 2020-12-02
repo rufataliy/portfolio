@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { boxCommon } from "./Box";
 
-export const ContactBox = styled.div`
+export const FlipCardWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
@@ -16,11 +16,11 @@ export const ContactBox = styled.div`
   }
 `;
 
-interface ContactProps {
+interface FlipCardProps {
   flip: boolean;
 }
 
-export const Contact = styled(boxCommon)<ContactProps>`
+export const FlipCard = styled(boxCommon)<FlipCardProps>`
   font-size: 1.4rem;
   cursor: default;
   perspective: 1000px;
@@ -49,12 +49,12 @@ export const Contact = styled(boxCommon)<ContactProps>`
   }
   ${(props) =>
     props.flip &&
-    `${ContactBox} {
+    `${FlipCardWrapper} {
      transform: rotateY(180deg);
    }   `}
 `;
 
-const ContactBoxCard = styled.div`
+const FlipCardGeneral = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
@@ -63,7 +63,7 @@ const ContactBoxCard = styled.div`
   -moz-backface-visibility: hidden;
 `;
 
-export const ContactBoxCardFront = styled(ContactBoxCard)`
+export const FlipCardFront = styled(FlipCardGeneral)`
   h1 {
     text-align: left;
   }
@@ -74,7 +74,7 @@ export const ContactBoxCardFront = styled(ContactBoxCard)`
   z-index: 2;
 `;
 
-export const ContactBoxCardBack = styled(ContactBoxCard)`
+export const FlipCardBack = styled(FlipCardGeneral)`
   transform: rotateY(180deg);
   z-index: 1;
   display: flex;

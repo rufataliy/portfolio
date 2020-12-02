@@ -5,11 +5,11 @@ export { Content } from "./Content";
 export { Toggle } from "./Toggle";
 export { Icon } from "./Icon";
 export {
-  Contact,
-  ContactBox,
-  ContactBoxCardBack,
-  ContactBoxCardFront,
-} from "./Contact";
+  FlipCard,
+  FlipCardWrapper,
+  FlipCardBack,
+  FlipCardFront,
+} from "./FlipCard";
 export { BoxLoader } from "./BoxLoader";
 export { ContentLoader } from "./ContentLoader";
 export { CodeBlock } from "./CodeBlock";
