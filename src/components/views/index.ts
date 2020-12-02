@@ -13,3 +13,4 @@ export {
 export { BoxLoader } from "./BoxLoader";
 export { ContentLoader } from "./ContentLoader";
 export { CodeBlock } from "./CodeBlock";
+export { SectionCard } from "./SectionCard";
