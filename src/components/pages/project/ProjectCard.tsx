@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Title } from "../../views";
+import { Box, Options, RoundedMenu, Title } from "../../views";
 import { Project as Model } from "models";
 import { Link, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
@@ -56,23 +56,26 @@ export const ProjectCard: React.FC<Props> = React.memo(({ project }) => {
 
   return (
     <Box>
-      <CardInfo className="card-info">
-        {project.link && (
-          <h2>
-            <a href={project.link}>Demo</a>
-            <Delimiter>|</Delimiter>
+      <RoundedMenu>
+        <div className="links">
+          {project.link && (
+            <h2 className="card-nav-link">
+              <a href={project.link}>Demo</a>
+              <Delimiter>|</Delimiter>
+            </h2>
+          )}
+          {project.code_link && (
+            <h2 className="card-nav-link">
+              <a href={project.code_link}>Code</a>
+              <Delimiter>|</Delimiter>
+            </h2>
+          )}
+          <h2 className="card-nav-link">
+            <Link to={`${url}/${project.id}`}>About</Link>
           </h2>
-        )}
-        {project.code_link && (
-          <h2>
-            <a href={project.code_link}>Github</a>
-            <Delimiter>|</Delimiter>
-          </h2>
-        )}
-        <h2>
-          <Link to={`${url}/${project.id}`}>Read more</Link>
-        </h2>
-      </CardInfo>
+        </div>
+        <Options />
+      </RoundedMenu>
       <Title>{project.title}</Title>
       <ImgWrapper>
         <img
