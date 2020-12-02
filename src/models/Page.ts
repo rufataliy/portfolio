@@ -1,8 +1,10 @@
 export interface Page {
   id: string;
   title: string;
+  code_link?: string;
+  link?: string;
   path: string;
-  type: "regular" | "extended";
+  type: "flip" | "section" | "link";
   content?: string;
   img: [
     {
