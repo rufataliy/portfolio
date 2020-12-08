@@ -1,0 +1,15 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <text stroke="#000" transform="matrix(4.456383722948658,0,0,3.232463827121478,-845.720872627205,-282.10856689335975) " xml:space="preserve" text-anchor="start" font-family="Junction, sans-serif" font-size="24" id="svg_1" y="134.17879" x="237.08631" stroke-width="0" fill="#2e682e">AYLANT</text>
+  <text stroke="#000" transform="matrix(0.9920382325726689,0,0,1.021507978439331,1.7282164786083873,-3.580762367313582) " xml:space="preserve" text-anchor="start" font-family="Junction, sans-serif" font-size="24" id="svg_2" y="188.45313" x="214.5" stroke-opacity="null" stroke-width="0" fill="#2e682e">Medical and Aesthetical Equipments</text>
+ </g>
+</svg>
