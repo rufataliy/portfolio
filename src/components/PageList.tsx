@@ -32,7 +32,17 @@ export const PageList: React.FC = () => {
   const [fetching, setFetching] = useState(false);
   const counts: { [key: string]: any } = useContext(Context);
   useEffect(() => {
-    api(`${process.env.REACT_APP_API_URL}/pages`, setPages, setFetching);
+    api(
+      `${process.env.REACT_APP_API_URL}/api/cards`,
+      (response: any) =>
+        setPages([
+          ...response.data.map((item: any) => ({
+            ...item.attributes,
+            id: item.id,
+          })),
+        ]),
+      setFetching
+    );
   }, []);
 
   const loading = (Array.isArray(pages) && pages.length < 1) || fetching;
