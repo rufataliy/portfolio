@@ -13,7 +13,17 @@ export const ProjectList: React.FC = React.memo(() => {
   const counts: { [key: string]: any } = useContext(Context);
 
   useEffect(() => {
-    api(`${process.env.REACT_APP_API_URL}${path}`, setProjects, setFetching);
+    api(
+      `${process.env.REACT_APP_API_URL}/api${path}?populate=img`,
+      (response: any) =>
+        setProjects([
+          ...response.data.map((item: any) => ({
+            ...item.attributes,
+            id: item.id,
+          })),
+        ]),
+      setFetching
+    );
   }, [path]);
 
   const loading = projects.length < 1 || fetching;

@@ -5,9 +5,18 @@ export interface Project {
   path: string;
   link: string;
   code_link: string;
-  img: [
-    {
-      url: string;
-    }
-  ];
+  about: null | string;
+  img: {
+    data: [
+      {
+        attributes: {
+          formats: {
+            small: {
+              url: string;
+            };
+          };
+        };
+      }
+    ];
+  };
 }
