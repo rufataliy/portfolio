@@ -6,23 +6,17 @@ export interface Page {
   path: string;
   type: "flip" | "section" | "link";
   content?: string;
-  img: [
-    {
-      url: string;
-      formats: {
-        thumbnail: {
-          url: string;
-        };
-        large: {
-          url: string;
-        };
-        medium: {
-          url: string;
-        };
-        small: {
-          url: string;
-        };
+  img: {
+    data: {
+      id: number;
+      attributes: {
+        name: string;
+        alternativeText: null | string;
+        width: number;
+        height: number;
+        formats: null;
+        url: string;
       };
-    }
-  ];
+    };
+  };
 }

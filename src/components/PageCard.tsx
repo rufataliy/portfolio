@@ -14,7 +14,7 @@ export const PageCard: React.FC<Props> = ({ page }) => {
         <Title>{page.title}</Title>
         <img
           className="page-card-img"
-          src={`${process.env.REACT_APP_API_URL}${page.img[0].url}`}
+          src={`${process.env.REACT_APP_API_URL}${page.img.data.attributes.url}`}
           alt={page.title}
         />
       </Link>

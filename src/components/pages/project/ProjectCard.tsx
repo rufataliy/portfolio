@@ -59,7 +59,10 @@ export const ProjectCard: React.FC<Props> = React.memo(({ project }) => {
       <Title>{project.title}</Title>
       <ImgWrapper>
         <img
-          src={process.env.REACT_APP_API_URL + project.img[0].url}
+          src={
+            process.env.REACT_APP_API_URL +
+            project.img.data[0].attributes.formats.small.url
+          }
           alt={project.title}
         />
       </ImgWrapper>
@@ -68,18 +71,20 @@ export const ProjectCard: React.FC<Props> = React.memo(({ project }) => {
           {project.link && (
             <h2 className="card-nav-link">
               <a href={project.link}>Demo</a>
-              <Delimiter>|</Delimiter>
             </h2>
           )}
           {project.code_link && (
             <h2 className="card-nav-link">
-              <a href={project.code_link}>Code</a>
               <Delimiter>|</Delimiter>
+              <a href={project.code_link}>Code</a>
             </h2>
           )}
-          <h2 className="card-nav-link">
-            <Link to={`${url}/${project.id}`}>About</Link>
-          </h2>
+          {project.about && (
+            <h2 className="card-nav-link">
+              <Delimiter>|</Delimiter>
+              <Link to={`${url}/${project.id}`}>About</Link>
+            </h2>
+          )}
         </div>
         <Options />
       </RoundedMenu>

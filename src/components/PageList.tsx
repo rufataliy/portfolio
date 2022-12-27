@@ -33,7 +33,7 @@ export const PageList: React.FC = () => {
   const counts: { [key: string]: any } = useContext(Context);
   useEffect(() => {
     api(
-      `${process.env.REACT_APP_API_URL}/api/cards`,
+      `${process.env.REACT_APP_API_URL}/api/cards?populate=img`,
       (response: any) =>
         setPages([
           ...response.data.map((item: any) => ({
