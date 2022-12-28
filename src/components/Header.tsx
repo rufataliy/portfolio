@@ -53,7 +53,7 @@ export const Header: React.FC<Props> = ({ on, toggle }) => {
   const [resume, setResume] = useState<Resume>();
 
   useEffect(() => {
-    api(`${process.env.REACT_APP_API_URL}/resume`, setResume);
+    api(`${process.env.REACT_APP_API_URL}/api/resume?populate=file`, setResume);
   }, []);
 
   return (
@@ -68,7 +68,7 @@ export const Header: React.FC<Props> = ({ on, toggle }) => {
           target={"_blank"}
           to={(location) => ({
             ...location,
-            pathname: `${process.env.REACT_APP_API_URL}${resume?.file[0].url}`,
+            pathname: `${process.env.REACT_APP_API_URL}${resume?.data.attributes.file.data.attributes.url}`,
           })}
         >
           Resume

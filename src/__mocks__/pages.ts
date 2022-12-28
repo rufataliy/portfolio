@@ -1,5 +1,5 @@
 import { Page } from "../models";
-import { profile, project, contact, blog } from "./img";
+import { profile, project, contact } from "./img";
 
 export const pages: Page[] = [
   {

@@ -1,7 +1,13 @@
 export interface Resume {
-  file: [
-    {
-      url: string;
-    }
-  ];
+  data: {
+    attributes: {
+      file: {
+        data: {
+          attributes: {
+            url: string;
+          };
+        };
+      };
+    };
+  };
 }

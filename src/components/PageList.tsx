@@ -18,7 +18,7 @@ const components: Component = {
   blogs: <Blogs />,
 };
 
-const getCardByTypes = (item: Model) => {
+const getCardByTypes = (item: Model): JSX.Element => {
   const types = {
     flip: <Contact key={item.id} page={item} />,
     link: <PageCard key={item.id} page={item} />,

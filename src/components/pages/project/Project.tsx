@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouteMatch } from "react-router-dom";
 import { Content, ContentLoader, CodeBlock } from "components/views";
 import { Project as Model } from "models";

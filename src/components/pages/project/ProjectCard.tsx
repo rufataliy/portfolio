@@ -24,29 +24,6 @@ const ImgWrapper = styled.div`
   }
 `;
 
-const CardInfo = styled.div`
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: 0.3s;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  background: ${({ theme }) => theme.colors.bg};
-  a {
-    transition: 0.3s ease-out;
-    text-decoration: underline;
-  }
-  a:hover {
-    color: ${(props) => props.theme.colors.accents.primary};
-  }
-`;
-
 const Delimiter = styled.span`
   margin: 0 10px;
 `;
