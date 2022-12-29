@@ -10,7 +10,7 @@ export const ProjectList: React.FC = React.memo(() => {
   const [projects, setProjects] = useState<Model[]>([]);
   const [fetching, setFetching] = useState(false);
   const { path } = useRouteMatch();
-  const counts: { [key: string]: any } = useContext(Context);
+  const { counts } = useContext(Context);
 
   useEffect(() => {
     api(

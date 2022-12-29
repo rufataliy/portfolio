@@ -30,7 +30,8 @@ const getCardByTypes = (item: Model): JSX.Element => {
 export const PageList: React.FC = () => {
   const [pages, setPages] = useState<Model[]>([]);
   const [fetching, setFetching] = useState(false);
-  const counts: { [key: string]: any } = useContext(Context);
+  const { counts } = useContext(Context);
+
   useEffect(() => {
     api(
       `${process.env.REACT_APP_API_URL}/api/cards?populate=img`,

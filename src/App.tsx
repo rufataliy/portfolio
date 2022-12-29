@@ -26,10 +26,12 @@ const Background = styled.div`
 `;
 
 function App() {
-  const [counts, setCounts] = useState({});
+  const [counts, setCounts] = useState({
+    data: { attributes: { pages: 0, projects: 0 } },
+  });
 
   useEffect(() => {
-    api(`${process.env.REACT_APP_API_URL}/counts`, setCounts);
+    api(`${process.env.REACT_APP_API_URL}/api/count`, setCounts);
   }, []);
 
   const [lightMode, setLightMode] = useState(
@@ -56,7 +58,7 @@ function App() {
     <Router history={history}>
       <GlobalStyles />
       <ThemeProvider theme={getTheme(lightMode)}>
-        <Context.Provider value={{ ...counts }}>
+        <Context.Provider value={{ counts: counts.data.attributes }}>
           <Background>
             <Wrapper>
               <Header
